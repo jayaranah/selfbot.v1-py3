@@ -11,12 +11,12 @@ from googletrans import Translator
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, six, ast, pytz, urllib, urllib3, urllib.parse, traceback, atexit
 
-client = LINE()
-#client = LINE("")
-clientMid = client.profile.mid
-clientProfile = client.getProfile()
-clientSettings = client.getSettings()
-clientPoll = OEPoll(client)
+Galank = LINE()
+#Galank = LINE("")
+GalankMid = Galank.profile.mid
+GalankProfile = Galank.getProfile()
+GalankSettings = Galank.getSettings()
+GalankPoll = OEPoll(Galank)
 botStart = time.time()
 
 msg_dict = {}
@@ -229,10 +229,10 @@ try:
 except:
     print("Couldn't read Log data")
     
-settings["myProfile"]["displayName"] = clientProfile.displayName
-settings["myProfile"]["statusMessage"] = clientProfile.statusMessage
-settings["myProfile"]["pictureStatus"] = clientProfile.pictureStatus
-coverId = client.getProfileDetail()["result"]["objectId"]
+settings["myProfile"]["displayName"] = GalankProfile.displayName
+settings["myProfile"]["statusMessage"] = GalankProfile.statusMessage
+settings["myProfile"]["pictureStatus"] = GalankProfile.pictureStatus
+coverId = Galank.getProfileDetail()["result"]["objectId"]
 settings["myProfile"]["coverId"] = coverId
 
 def restartBot():
@@ -241,7 +241,7 @@ def restartBot():
     os.execl(python, python, *sys.argv)
     
 def logError(text):
-    client.log("[ ERROR ] {}".format(str(text)))
+    Galank.log("[ ERROR ] {}".format(str(text)))
     tz = pytz.timezone("Asia/Jakarta")
     timeNow = datetime.now(tz=tz)
     timeHours = datetime.strftime(timeNow,"(%H:%M)")
@@ -298,7 +298,7 @@ def sendMention(to, text="", mids=[]):
         arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
         arr.append(arrData)
         textx += mention + str(text)
-    client.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    Galank.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
 
 def command(text):
     pesan = text.lower()
@@ -391,7 +391,7 @@ def helpmessage():
                     "╠ " + key + "SearchMusic 「Search」" + "\n" + \
                     "╠ " + key + "SearchLyric 「Search」" + "\n" + \
                     "╠ " + key + "SearchImage 「Search」" + "\n" + \
-                    "╚══[ AimBot Team ]"
+                    "╚══[ TΣΔM SLΔCҜβΩT ]"
     return helpMessage
 
 def helptexttospeech():
@@ -453,8 +453,8 @@ def helptexttospeech():
                         "╠ " + key + "uk : Ukrainian" + "\n" + \
                         "╠ " + key + "vi : Vietnamese" + "\n" + \
                         "╠ " + key + "cy : Welsh" + "\n" + \
-                        "╚══[ Copyright AimBot Team]" + "\n" + "\n\n" + \
-                        "Contoh : " + key + "say-id Zero"
+                        "╚══[ TΣΔM SLΔCҜβΩT]" + "\n" + "\n\n" + \
+                        "Contoh : " + key + "say-id Galank"
     return helpTextToSpeech
 
 def helptranslate():
@@ -569,8 +569,8 @@ def helptranslate():
                     "╠ " + key + "zu : zulu" + "\n" + \
                     "╠ " + key + "fil : Filipino" + "\n" + \
                     "╠ " + key + "he : Hebrew" + "\n" + \
-                    "╚══[ Copyright AimBot Team ]" + "\n" + "\n\n" + \
-                    "Contoh : " + key + "tr-id Zero"
+                    "╚══[ TΣΔM SLΔCҜβΩT ]" + "\n" + "\n\n" + \
+                    "Contoh : " + key + "tr-id Galank"
     return helpTranslate
 
 def clientBot(op):
@@ -582,21 +582,21 @@ def clientBot(op):
         if op.type == 5:
             print ("[ 5 ] NOTIFIED ADD CONTACT")
             if settings["autoAdd"] == True:
-                client.findAndAddContactsByMid(op.param1)
-            sendMention(op.param1, "Halo @!,terimakasih telah menambahkan saya sebagai teman :3")
+                Galank.findAndAddContactsByMid(op.param1)
+            sendMention(op.param1, "Hallo @!,terimakasih telah menambahkan saya sebagai teman :v")
 
         if op.type == 13:
             print ("[ 13 ] NOTIFIED INVITE INTO GROUP")
-            if clientMid in op.param3:
+            if GalankMid in op.param3:
                 if settings["autoJoin"] == True:
-                    client.acceptGroupInvitation(op.param1)
-                sendMention(op.param1, "Halo @!, Terimakasih Telah Mengundang Saya :3")
+                    Galank.acceptGroupInvitation(op.param1)
+                sendMention(op.param1, "Halo @!, Terimakasih Telah Mengundang Saya :v")
 
         if op.type in [22, 24]:
             print ("[ 22 And 24 ] NOTIFIED INVITE INTO ROOM & NOTIFIED LEAVE ROOM")
             if settings["autoLeave"] == True:
                 sendMention(op.param1, "Oi asw @!,ngapain invite saya")
-                client.leaveRoom(op.param1)
+                Galank.leaveRoom(op.param1)
 
         if op.type == 25:
             try:
@@ -611,7 +611,7 @@ def clientBot(op):
                     setKey = ''
                 if msg.toType == 0 or msg.toType == 1 or msg.toType == 2:
                     if msg.toType == 0:
-                        if sender != client.profile.mid:
+                        if sender != Galank.profile.mid:
                             to = sender
                         else:
                             to = receiver
@@ -626,95 +626,95 @@ def clientBot(op):
                             cmd = command(text)
                             if cmd == "help":
                                 helpMessage = helpmessage()
-                                client.sendMessage(to, str(helpMessage))
+                                Galank.sendMessage(to, str(helpMessage))
                             elif cmd == "tts":
                                 helpTextToSpeech = helptexttospeech()
-                                client.sendMessage(to, str(helpTextToSpeech))
+                                Galank.sendMessage(to, str(helpTextToSpeech))
                             elif cmd == "translate":
                                 helpTranslate = helptranslate()
-                                client.sendMessage(to, str(helpTranslate))
+                                Galank.sendMessage(to, str(helpTranslate))
                             elif cmd.startswith("changekey:"):
                                 sep = text.split(" ")
                                 key = text.replace(sep[0] + " ","")
                                 if " " in key:
-                                    client.sendMessage(to, "Key tidak bisa menggunakan spasi")
+                                    Galank.sendMessage(to, "Key tidak bisa menggunakan spasi")
                                 else:
                                     settings["keyCommand"] = str(key).lower()
-                                    client.sendMessage(to, "Berhasil mengubah key command menjadi [ {} ]".format(str(key).lower()))
+                                    Galank.sendMessage(to, "Berhasil mengubah key command menjadi [ {} ]".format(str(key).lower()))
                             elif cmd == "speed":
                                 start = time.time()
-                                client.sendMessage(to, "Benchmarking...")
+                                Galank.sendMessage(to, "STATUS BOT...")
                                 elapsed_time = time.time() - start
-                                client.sendMessage(to, "[ Speed ]\nKecepatan mengirim pesan {} detik".format(str(elapsed_time)))
+                                Galank.sendMessage(to, "[ Speed ]\nKecepatan mengirim pesan {} detik".format(str(elapsed_time)))
                             elif cmd == "runtime":
                                 timeNow = time.time()
                                 runtime = timeNow - botStart
                                 runtime = format_timespan(runtime)
-                                client.sendMessage(to, "Bot sudah berjalan selama {}".format(str(runtime)))
+                                Galank.sendMessage(to, "Bot sudah berjalan selama {}".format(str(runtime)))
                             elif cmd == "restart":
-                                client.sendMessage(to, "Berhasil merestart Bot")
+                                Galank.sendMessage(to, "Berhasil merestart Bot")
                                 restartBot()
 # Pembatas Script #
                             elif cmd == "autoadd on":
                                 settings["autoAdd"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto add")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan auto add")
                             elif cmd == "autoadd off":
                                 settings["autoAdd"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto add")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan auto add")
                             elif cmd == "autojoin on":
                                 settings["autoJoin"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto join")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan auto join")
                             elif cmd == "autojoin off":
                                 settings["autoJoin"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto join")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan auto join")
                             elif cmd == "autoleave on":
                                 settings["autoLeave"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto leave")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan auto leave")
                             elif cmd == "autoleave off":
                                 settings["autoLeave"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto leave")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan auto leave")
                             elif cmd == "autorespon on":
                                 settings["autoRespon"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto respon")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan auto respon")
                             elif cmd == "autorespon off":
                                 settings["autoRespon"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto respon")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan auto respon")
                             elif cmd == "autoread on":
                                 settings["autoRead"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto read")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan auto read")
                             elif cmd == "autoread off":
                                 settings["autoRead"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto read")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan auto read")
                             elif cmd == "autojointicket on":
                                 settings["autoJoinTicket"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
                             elif cmd == "autoJoinTicket off":
                                 settings["autoJoin"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
                             elif cmd == "checkcontact on":
                                 settings["checkContact"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan check details contact")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan check details contact")
                             elif cmd == "checkcontact off":
                                 settings["checkContact"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan check details contact")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan check details contact")
                             elif cmd == "checkpost on":
                                 settings["checkPost"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan check details post")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan check details post")
                             elif cmd == "checkpost off":
                                 settings["checkPost"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan check details post")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan check details post")
                             elif cmd == "checksticker on":
                                 settings["checkSticker"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan check details sticker")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan check details sticker")
                             elif cmd == "checksticker off":
                                 settings["checkSticker"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan check details sticker")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan check details sticker")
                             elif cmd == "unsendchat on":
                                 settings["unsendMessage"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan unsend message")
+                                Galank.sendMessage(to, "Berhasil mengaktifkan unsend message")
                             elif cmd == "unsendchat off":
                                 settings["unsendMessage"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan unsend message")
+                                Galank.sendMessage(to, "Berhasil menonaktifkan unsend message")
                             elif cmd == "status":
                                 try:
                                     ret_ = "╔══[ Status ]"
@@ -741,49 +741,50 @@ def clientBot(op):
                                     if settings["unsendMessage"] == True: ret_ += "\n╠══[ ON ] Unsend Message"
                                     else: ret_ += "\n╠══[ OFF ] Unsend Message"
                                     ret_ += "\n╚══[ Status ]"
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
                                 except Exception as e:
-                                    client.sendMessage(msg.to, str(e))
+                                    Galank.sendMessage(msg.to, str(e))
 # Pembatas Script #
                             elif cmd == "crash":
-                                client.sendContact(to, "u1f41296217e740650e0448b96851a3e2',")
+                                Galank.sendContact(to, "u1f41296217e740650e0448b96851a3e2',")
                             elif cmd.startswith("changename:"):
                                 sep = text.split(" ")
                                 string = text.replace(sep[0] + " ","")
                                 if len(string) <= 20:
-                                    profile = client.getProfile()
+                                    profile = Galank.getProfile()
                                     profile.displayName = string
-                                    client.updateProfile(profile)
-                                    client.sendMessage(to,"Berhasil mengganti display name menjadi{}".format(str(string)))
+                                    Galank.updateProfile(profile)
+                                    Galank.sendMessage(to,"Berhasil mengganti display name menjadi{}".format(str(string)))
                             elif cmd.startswith("changebio:"):
                                 sep = text.split(" ")
                                 string = text.replace(sep[0] + " ","")
                                 if len(string) <= 500:
                                     profile = client.getProfile()
                                     profile.statusMessage = string
-                                    client.updateProfile(profile)
-                                    client.sendMessage(to,"Berhasil mengganti status message menjadi{}".format(str(string)))
+                                    Galank.updateProfile(profile)
+                                    Galank.sendMessage(to,"Berhasil mengganti status message menjadi{}".format(str(string)))
                             elif cmd == "me":
-                                sendMention(to, "@!", [sender])
-                                client.sendContact(to, sender)
+                                sendMention(to, "@", [sender])
+                                Galank.sendContact(to, sender)
+                                Galank.sendMessage(to, Jangan songgong goblok)
                             elif cmd == "mymid":
-                                client.sendMessage(to, "[ MID ]\n{}".format(sender))
+                                Galank.sendMessage(to, "[ MID ]\n{}".format(sender))
                             elif cmd == "myname":
-                                contact = client.getContact(sender)
-                                client.sendMessage(to, "[ Display Name ]\n{}".format(contact.displayName))
+                                contact = Galank.getContact(sender)
+                                Galank.sendMessage(to, "[ Display Name ]\n{}".format(contact.displayName))
                             elif cmd == "mybio":
-                                contact = client.getContact(sender)
-                                client.sendMessage(to, "[ Status Message ]\n{}".format(contact.statusMessage))
+                                contact = Galank.getContact(sender)
+                                Galank.sendMessage(to, "[ Status Message ]\n{}".format(contact.statusMessage))
                             elif cmd == "mypicture":
-                                contact = client.getContact(sender)
-                                client.sendImageWithURL(to,"http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
+                                contact = Galank.getContact(sender)
+                                Galank.sendImageWithURL(to,"http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
                             elif cmd == "myvideoprofile":
-                                contact = client.getContact(sender)
-                                client.sendVideoWithURL(to,"http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
+                                contact = Galank.getContact(sender)
+                                Galank.sendVideoWithURL(to,"http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
                             elif cmd == "mycover":
-                                channel = client.getProfileCoverURL(sender)          
+                                channel = Galank.getProfileCoverURL(sender)          
                                 path = str(channel)
-                                client.sendImageWithURL(to, path)
+                                Galank.sendImageWithURL(to, path)
                             elif cmd.startswith("cloneprofile "):
                                 if 'MENTION' in msg.contentMetadata.keys()!= None:
                                     names = re.findall(r'@(\w+)', text)
@@ -794,34 +795,34 @@ def clientBot(op):
                                         if mention["M"] not in lists:
                                             lists.append(mention["M"])
                                     for ls in lists:
-                                        contact = client.getContact(ls)
-                                        client.cloneContactProfile(ls)
-                                        client.sendMessage(to, "Berhasil mengclone profile {}".format(contact.displayName))
+                                        contact = Galank.getContact(ls)
+                                        Galank.cloneContactProfile(ls)
+                                        Galank.sendMessage(to, "Berhasil mengclone profile {}".format(contact.displayName))
                             elif cmd == "restoreprofile":
                                 try:
-                                    clientProfile = client.getProfile()
-                                    clientProfile.displayName = str(settings["myProfile"]["displayName"])
-                                    clientProfile.statusMessage = str(settings["myProfile"]["statusMessage"])
-                                    clientProfile.pictureStatus = str(settings["myProfile"]["pictureStatus"])
-                                    client.updateProfileAttribute(8, clientProfile.pictureStatus)
-                                    client.updateProfile(clientProfile)
+                                    GalankProfile = Galank.getProfile()
+                                    GalankProfile.displayName = str(settings["myProfile"]["displayName"])
+                                    GalankProfile.statusMessage = str(settings["myProfile"]["statusMessage"])
+                                    GalankProfile.pictureStatus = str(settings["myProfile"]["pictureStatus"])
+                                    Galank.updateProfileAttribute(8, GalankProfile.pictureStatus)
+                                    Galank.updateProfile(GalankProfile)
                                     coverId = str(settings["myProfile"]["coverId"])
-                                    client.updateProfileCoverById(coverId)
-                                    client.sendMessage(to, "Berhasil restore profile tunggu beberapa saat sampai profile berubah")
+                                    Galank.updateProfileCoverById(coverId)
+                                    Galank.sendMessage(to, "Berhasil restore profile tunggu beberapa saat sampai profile berubah")
                                 except Exception as e:
-                                    client.sendMessage(to, "Gagal restore profile")
+                                    Galank.sendMessage(to, "Gagal restore profile")
                                     logError(error)
                             elif cmd == "backupprofile":
                                 try:
-                                    profile = client.getProfile()
+                                    profile = Galank.getProfile()
                                     settings["myProfile"]["displayName"] = str(profile.displayName)
                                     settings["myProfile"]["statusMessage"] = str(profile.statusMessage)
                                     settings["myProfile"]["pictureStatus"] = str(profile.pictureStatus)
-                                    coverId = client.getProfileDetail()["result"]["objectId"]
+                                    coverId = Galank.getProfileDetail()["result"]["objectId"]
                                     settings["myProfile"]["coverId"] = str(coverId)
-                                    client.sendMessage(to, "Berhasil backup profile")
+                                    Galank.sendMessage(to, "Berhasil backup profile")
                                 except Exception as e:
-                                    client.sendMessage(to, "Gagal backup profile")
+                                    Galank.sendMessage(to, "Gagal backup profile")
                                     logError(error)
                             elif cmd.startswith("stealmid "):
                                 if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -835,7 +836,7 @@ def clientBot(op):
                                     ret_ = "[ Mid User ]"
                                     for ls in lists:
                                         ret_ += "\n{}".format(str(ls))
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
                             elif cmd.startswith("stealname "):
                                 if 'MENTION' in msg.contentMetadata.keys()!= None:
                                     names = re.findall(r'@(\w+)', text)
@@ -846,8 +847,8 @@ def clientBot(op):
                                         if mention["M"] not in lists:
                                             lists.append(mention["M"])
                                     for ls in lists:
-                                        contact = client.getContact(ls)
-                                        client.sendMessage(to, "[ Display Name ]\n{}".format(str(contact.displayName)))
+                                        contact = Galank.getContact(ls)
+                                        Galank.sendMessage(to, "[ Display Name ]\n{}".format(str(contact.displayName)))
                             elif cmd.startswith("stealbio "):
                                 if 'MENTION' in msg.contentMetadata.keys()!= None:
                                     names = re.findall(r'@(\w+)', text)
@@ -858,8 +859,8 @@ def clientBot(op):
                                         if mention["M"] not in lists:
                                             lists.append(mention["M"])
                                     for ls in lists:
-                                        contact = client.getContact(ls)
-                                        client.sendMessage(to, "[ Status Message ]\n{}".format(str(contact.statusMessage)))
+                                        contact = Galank.getContact(ls)
+                                        Galank.sendMessage(to, "[ Status Message ]\n{}".format(str(contact.statusMessage)))
                             elif cmd.startswith("stealpicture"):
                                 if 'MENTION' in msg.contentMetadata.keys()!= None:
                                     names = re.findall(r'@(\w+)', text)
@@ -870,9 +871,9 @@ def clientBot(op):
                                         if mention["M"] not in lists:
                                             lists.append(mention["M"])
                                     for ls in lists:
-                                        contact = client.getContact(ls)
+                                        contact = Galank.getContact(ls)
                                         path = "http://dl.profile.line.naver.jp/{}".format(contact.pictureStatus)
-                                        client.sendImageWithURL(to, str(path))
+                                        Galank.sendImageWithURL(to, str(path))
                             elif cmd.startswith("stealvideoprofile "):
                                 if 'MENTION' in msg.contentMetadata.keys()!= None:
                                     names = re.findall(r'@(\w+)', text)
@@ -883,11 +884,11 @@ def clientBot(op):
                                         if mention["M"] not in lists:
                                             lists.append(mention["M"])
                                     for ls in lists:
-                                        contact = client.getContact(ls)
+                                        contact = Galank.getContact(ls)
                                         path = "http://dl.profile.line.naver.jp/{}/vp".format(contact.pictureStatus)
-                                        client.sendVideoWithURL(to, str(path))
+                                        Galank.sendVideoWithURL(to, str(path))
                             elif cmd.startswith("stealcover "):
-                                if client != None:
+                                if Galank != None:
                                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                                         names = re.findall(r'@(\w+)', text)
                                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -897,52 +898,52 @@ def clientBot(op):
                                             if mention["M"] not in lists:
                                                 lists.append(mention["M"])
                                         for ls in lists:
-                                            channel = client.getProfileCoverURL(ls)
+                                            channel = Galank.getProfileCoverURL(ls)
                                             path = str(channel)
-                                            client.sendImageWithURL(to, str(path))
+                                            Galank.sendImageWithURL(to, str(path))
 # Pembatas Script #
                             elif cmd == 'groupcreator':
-                                group = client.getGroup(to)
+                                group = Galank.getGroup(to)
                                 GS = group.creator.mid
-                                client.sendContact(to, GS)
+                                Galank.sendContact(to, GS)
                             elif cmd == 'groupid':
-                                gid = client.getGroup(to)
-                                client.sendMessage(to, "[ID Group : ]\n" + gid.id)
+                                gid = Galank.getGroup(to)
+                                Galank.sendMessage(to, "[ID Group : ]\n" + gid.id)
                             elif cmd == 'grouppicture':
-                                group = client.getGroup(to)
+                                group = Galank.getGroup(to)
                                 path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
-                                client.sendImageWithURL(to, path)
+                                Galank.sendImageWithURL(to, path)
                             elif cmd == 'groupname':
-                                gid = client.getGroup(to)
-                                client.sendMessage(to, "[Nama Group : ]\n" + gid.name)
+                                gid = Galank.getGroup(to)
+                                Galank.sendMessage(to, "[Nama Group : ]\n" + gid.name)
                             elif cmd == 'groupticket':
                                 if msg.toType == 2:
-                                    group = client.getGroup(to)
+                                    group = Galank.getGroup(to)
                                     if group.preventedJoinByTicket == False:
                                         ticket = client.reissueGroupTicket(to)
-                                        client.sendMessage(to, "[ Group Ticket ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
+                                        Galank.sendMessage(to, "[ Group Ticket ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
                                     else:
-                                        client.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
+                                        Galank.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
                             elif cmd == 'groupticket on':
                                 if msg.toType == 2:
-                                    group = client.getGroup(to)
+                                    group = Galank.getGroup(to)
                                     if group.preventedJoinByTicket == False:
-                                        client.sendMessage(to, "Grup qr sudah terbuka")
+                                        Galank.sendMessage(to, "Grup qr sudah terbuka")
                                     else:
                                         group.preventedJoinByTicket = False
-                                        client.updateGroup(group)
-                                        client.sendMessage(to, "Berhasil membuka grup qr")
+                                        Galank.updateGroup(group)
+                                        Galank.sendMessage(to, "Berhasil membuka grup qr")
                             elif cmd == 'groupticket off':
                                 if msg.toType == 2:
-                                    group = client.getGroup(to)
+                                    group = Galank.getGroup(to)
                                     if group.preventedJoinByTicket == True:
-                                        client.sendMessage(to, "Grup qr sudah tertutup")
+                                        Galank.sendMessage(to, "Grup qr sudah tertutup")
                                     else:
                                         group.preventedJoinByTicket = True
-                                        client.updateGroup(group)
-                                        client.sendMessage(to, "Berhasil menutup grup qr")
+                                        Galank.updateGroup(group)
+                                        Galank.sendMessage(to, "Berhasil menutup grup qr")
                             elif cmd == 'groupinfo':
-                                group = client.getGroup(to)
+                                group = Galank.getGroup(to)
                                 try:
                                     gCreator = group.creator.displayName
                                 except:
@@ -967,39 +968,39 @@ def clientBot(op):
                                 ret_ += "\n╠ Group Qr : {}".format(gQr)
                                 ret_ += "\n╠ Group Ticket : {}".format(gTicket)
                                 ret_ += "\n╚══[ Finish ]"
-                                client.sendMessage(to, str(ret_))
-                                client.sendImageWithURL(to, path)
+                                Galank.sendMessage(to, str(ret_))
+                                Galank.sendImageWithURL(to, path)
                             elif cmd == 'groupmemberlist':
                                 if msg.toType == 2:
-                                    group = client.getGroup(to)
+                                    group = Galank.getGroup(to)
                                     ret_ = "╔══[ Member List ]"
                                     no = 0 + 1
                                     for mem in group.members:
                                         ret_ += "\n╠ {}. {}".format(str(no), str(mem.displayName))
                                         no += 1
                                     ret_ += "\n╚══[ Total {} ]".format(str(len(group.members)))
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
                             elif cmd == 'grouplist':
-                                    groups = client.groups
+                                    groups = Galank.groups
                                     ret_ = "╔══[ Group List ]"
                                     no = 0 + 1
                                     for gid in groups:
-                                        group = client.getGroup(gid)
+                                        group = Galank.getGroup(gid)
                                         ret_ += "\n╠ {}. {} | {}".format(str(no), str(group.name), str(len(group.members)))
                                         no += 1
                                     ret_ += "\n╚══[ Total {} Groups ]".format(str(len(groups)))
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
 # Pembatas Script #
                             elif cmd == "changepictureprofile":
                                 settings["changePictureProfile"] = True
-                                client.sendMessage(to, "Silahkan kirim gambarnya")
+                                Galank.sendMessage(to, "Silahkan kirim gambarnya")
                             elif cmd == "changegrouppicture":
                                 if msg.toType == 2:
                                     if to not in settings["changeGroupPicture"]:
                                         settings["changeGroupPicture"].append(to)
-                                    client.sendMessage(to, "Silahkan kirim gambarnya")
+                                    Galank.sendMessage(to, "Silahkan kirim gambarnya")
                             elif cmd == 'mention':
-                                group = client.getGroup(msg.to)
+                                group = Galank.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
                                 k = len(nama)//100
                                 for a in range(k+1):
@@ -1009,9 +1010,9 @@ def clientBot(op):
                                     for i in group.members[a*100 : (a+1)*100]:
                                         b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
                                         s += 7
-                                        txt += u'@Zero \n'
-                                    client.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                                    client.sendMessage(to, "Total {} Mention".format(str(len(nama))))  
+                                        txt += u'@Galank \n'
+                                    Galank.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
+                                    Galank.sendMessage(to, "Total {} Mention".format(str(len(nama))))  
                             elif cmd == "lurking on":
                                 tz = pytz.timezone("Asia/Makassar")
                                 timeNow = datetime.now(tz=tz)
@@ -1036,7 +1037,7 @@ def clientBot(op):
                                     read['readMember'][receiver] = ""
                                     read['readTime'][receiver] = readTime
                                     read['ROM'][receiver] = {}
-                                    client.sendMessage(receiver,"Lurking telah diaktifkan")
+                                    Galank.sendMessage(receiver,"Lurking telah diaktifkan")
                                 else:
                                     try:
                                         del read['readPoint'][receiver]
@@ -1063,7 +1064,7 @@ def clientBot(op):
                                     if bln == str(k): bln = bulan[k-1]
                                 readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
                                 if receiver not in read['readPoint']:
-                                    client.sendMessage(receiver,"Lurking telah dinonaktifkan")
+                                    Galank.sendMessage(receiver,"Lurking telah dinonaktifkan")
                                 else:
                                     try:
                                         del read['readPoint'][receiver]
@@ -1071,7 +1072,7 @@ def clientBot(op):
                                         del read['readTime'][receiver]
                                     except:
                                         pass
-                                    client.sendMessage(receiver,"Delete reading point : \n" + readTime)
+                                    Galank.sendMessage(receiver,"Delete reading point : \n" + readTime)
         
                             elif cmd == "lurking reset":
                                 tz = pytz.timezone("Asia/Makassar")
@@ -1100,7 +1101,7 @@ def clientBot(op):
                                     read['ROM'][receiver] = {}
                                     client.sendMessage(msg.to, "Reset reading point : \n" + readTime)
                                 else:
-                                    client.sendMessage(msg.to, "Lurking belum diaktifkan ngapain di reset?")
+                                    Galank.sendMessage(msg.to, "Lurking belum diaktifkan ngapain di reset?")
                                     
                             elif cmd == "lurking":
                                 tz = pytz.timezone("Asia/Makassar")
@@ -1122,7 +1123,7 @@ def clientBot(op):
                                         chiya = []
                                         for rom in read["ROM"][receiver].items():
                                             chiya.append(rom[1])
-                                        cmem = client.getContacts(chiya) 
+                                        cmem = Galank.getContacts(chiya) 
                                         zx = ""
                                         zxc = ""
                                         zx2 = []
@@ -1138,12 +1139,12 @@ def clientBot(op):
                                         zxc += pesan2
                                     text = xpesan+ zxc + "\n" + readTime
                                     try:
-                                        client.sendMessage(receiver, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
+                                        Galank.sendMessage(receiver, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
                                     except Exception as error:
                                         print (error)
                                     pass
                                 else:
-                                    client.sendMessage(receiver,"Lurking belum diaktifkan")
+                                    Galank.sendMessage(receiver,"Lurking belum diaktifkan")
                             elif cmd.startswith("mimicadd"):
                                 targets = []
                                 key = eval(msg.contentMetadata["MENTION"])
@@ -1153,10 +1154,10 @@ def clientBot(op):
                                 for target in targets:
                                     try:
                                         settings["mimic"]["target"][target] = True
-                                        client.sendMessage(msg.to,"Target ditambahkan!")
+                                        Galank.sendMessage(msg.to,"Target ditambahkan!")
                                         break
                                     except:
-                                        client.sendMessage(msg.to,"Gagal menambahkan target")
+                                        Galank.sendMessage(msg.to,"Gagal menambahkan target")
                                         break
                             elif cmd.startswith("mimicdel"):
                                 targets = []
@@ -1167,21 +1168,21 @@ def clientBot(op):
                                 for target in targets:
                                     try:
                                         del settings["mimic"]["target"][target]
-                                        client.sendMessage(msg.to,"Target dihapuskan!")
+                                        Galank.sendMessage(msg.to,"Target dihapuskan!")
                                         break
                                     except:
-                                        client.sendMessage(msg.to,"Gagal menghapus target")
+                                        Galank.sendMessage(msg.to,"Gagal menghapus target")
                                         break
                                     
                             elif cmd == "mimiclist":
                                 if settings["mimic"]["target"] == {}:
-                                    client.sendMessage(msg.to,"Tidak Ada Target")
+                                    Galank.sendMessage(msg.to,"Tidak Ada Target")
                                 else:
                                     mc = "╔══[ Mimic List ]"
                                     for mi_d in settings["mimic"]["target"]:
                                         mc += "\n╠ "+client.getContact(mi_d).displayName
                                     mc += "\n╚══[ Finish ]"
-                                    client.sendMessage(msg.to,mc)
+                                    Galank.sendMessage(msg.to,mc)
                                 
                             elif cmd.startswith("mimic"):
                                 sep = text.split(" ")
@@ -1189,11 +1190,11 @@ def clientBot(op):
                                 if mic == "on":
                                     if settings["mimic"]["status"] == False:
                                         settings["mimic"]["status"] = True
-                                        client.sendMessage(msg.to,"Reply Message on")
+                                        Galank.sendMessage(msg.to,"Reply Message on")
                                 elif mic == "off":
                                     if settings["mimic"]["status"] == True:
                                         settings["mimic"]["status"] = False
-                                        client.sendMessage(msg.to,"Reply Message off")
+                                        Galank.sendMessage(msg.to,"Reply Message off")
 # Pembatas Script #   
                             elif cmd.startswith("checkwebsite"):
                                 try:
@@ -1202,7 +1203,7 @@ def clientBot(op):
                                     r = requests.get("http://rahandiapi.herokuapp.com/sswebAPI?key=betakey&link={}".format(urllib.parse.quote(query)))
                                     data = r.text
                                     data = json.loads(data)
-                                    client.sendImageWithURL(to, data["result"])
+                                    Galank.sendImageWithURL(to, data["result"])
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("checkdate"):
@@ -1217,7 +1218,7 @@ def clientBot(op):
                                     ret_ += "\nAge : {}".format(str(data["data"]["usia"]))
                                     ret_ += "\nBirthday : {}".format(str(data["data"]["ultah"]))
                                     ret_ += "\nZodiak : {}".format(str(data["data"]["zodiak"]))
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("checkpraytime "):
@@ -1238,7 +1239,7 @@ def clientBot(op):
                                     ret_ += "\n╠ " + data[4]
                                     ret_ += "\n╠ " + data[5]
                                     ret_ += "\n╚══[ Success ]"
-                                    client.sendMessage(msg.to, str(ret_))
+                                    Galank.sendMessage(msg.to, str(ret_))
                             elif cmd.startswith("checkweather "):
                                 try:
                                     sep = text.split(" ")
@@ -1259,7 +1260,7 @@ def clientBot(op):
                                         ret_ += "\n╠ Tanggal : " + datetime.strftime(timeNow,'%Y-%m-%d')
                                         ret_ += "\n╠ Jam : " + datetime.strftime(timeNow,'%H:%M:%S') + " WIB"
                                         ret_ += "\n╚══[ Success ]"
-                                        client.sendMessage(to, str(ret_))
+                                        Galank.sendMessage(to, str(ret_))
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("checklocation "):
@@ -1275,7 +1276,7 @@ def clientBot(op):
                                         ret_ += "\n╠ Location : " + data[0]
                                         ret_ += "\n╠ Google Maps : " + link
                                         ret_ += "\n╚══[ Success ]"
-                                        client.sendMessage(to, str(ret_))
+                                        Galank.sendMessage(to, str(ret_))
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("instainfo"):
@@ -1303,8 +1304,8 @@ def clientBot(op):
                                         ret_ += "\n╠ Total Post : {}".format(str(data["graphql"]["user"]["edge_owner_to_timeline_media"]["count"]))
                                         ret_ += "\n╚══[ https://www.instagram.com/{} ]".format(search)
                                         path = data["graphql"]["user"]["profile_pic_url_hd"]
-                                        client.sendImageWithURL(to, str(path))
-                                        client.sendMessage(to, str(ret_))
+                                        Galank.sendImageWithURL(to, str(path))
+                                        Galank.sendMessage(to, str(ret_))
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("instapost"):
@@ -1326,7 +1327,7 @@ def clientBot(op):
                                         ret_ += "\n╠ Jumlah Like : {}".format(str(data["media"]["like_count"]))
                                         ret_ += "\n╠ Jumlah Comment : {}".format(str(data["media"]["comment_count"]))
                                         ret_ += "\n╚══[ Caption ]\n{}".format(str(data["media"]["caption"]))
-                                        client.sendMessage(to, str(ret_))
+                                        Galank.sendMessage(to, str(ret_))
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("instastory"):
@@ -1346,7 +1347,7 @@ def clientBot(op):
                                                 if search["tipe"] == 1:
                                                     client.sendImageWithURL(to, str(search["link"]))
                                                 if search["tipe"] == 2:
-                                                    client.sendVideoWithURL(to, str(search["link"]))
+                                                    Galank.sendVideoWithURL(to, str(search["link"]))
                                 except Exception as error:
                                     logError(error)
                                     
@@ -1356,10 +1357,10 @@ def clientBot(op):
                                 lang = sep[0]
                                 say = text.replace("say-" + lang + " ","")
                                 if lang not in list_language["list_textToSpeech"]:
-                                    return client.sendMessage(to, "Language not found")
+                                    return Galank.sendMessage(to, "Language not found")
                                 tts = gTTS(text=say, lang=lang)
                                 tts.save("hasil.mp3")
-                                client.sendAudio(to,"hasil.mp3")
+                                Galank.sendAudio(to,"hasil.mp3")
                                 
                             elif cmd.startswith("searchimage"):
                                 try:
@@ -1373,7 +1374,7 @@ def clientBot(op):
                                         path = random.choice(items)
                                         a = items.index(path)
                                         b = len(items)
-                                        client.sendImageWithURL(to, str(path))
+                                        Galank.sendImageWithURL(to, str(path))
                                 except Exception as error:
                                     logError(error)
                             elif cmd.startswith("searchmusic "):
@@ -1392,7 +1393,7 @@ def clientBot(op):
                                         ret_ += "\n╠ {}. {}".format(str(num), str(music["single"]))
                                     ret_ += "\n╚══[ Total {} Music ]".format(str(len(data["result"])))
                                     ret_ += "\n\nUntuk Melihat Details Music, silahkan gunakan command {}SearchMusic {}|「number」".format(str(setKey), str(search))
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
                                 elif len(cond) == 2:
                                     num = int(cond[1])
                                     if num <= len(data["result"]):
@@ -1407,9 +1408,9 @@ def clientBot(op):
                                             ret_ += "\n╠ Size : {}".format(str(data["result"]["size"]))
                                             ret_ += "\n╠ Link : {}".format(str(data["result"]["mp3"][0]))
                                             ret_ += "\n╚══[ Finish ]"
-                                            client.sendImageWithURL(to, str(data["result"]["img"]))
-                                            client.sendMessage(to, str(ret_))
-                                            client.sendAudioWithURL(to, str(data["result"]["mp3"][0]))
+                                            Galank.sendImageWithURL(to, str(data["result"]["img"]))
+                                            Galank.sendMessage(to, str(ret_))
+                                            Galank.sendAudioWithURL(to, str(data["result"]["mp3"][0]))
                             elif cmd.startswith("searchlyric"):
                                 sep = msg.text.split(" ")
                                 query = msg.text.replace(sep[0] + " ","")
@@ -1426,7 +1427,7 @@ def clientBot(op):
                                         ret_ += "\n╠ {}. {}".format(str(num), str(lyric["single"]))
                                     ret_ += "\n╚══[ Total {} Music ]".format(str(len(data["results"])))
                                     ret_ += "\n\nUntuk Melihat Details Lyric, silahkan gunakan command {}SearchLyric {}|「number」".format(str(setKey), str(search))
-                                    client.sendMessage(to, str(ret_))
+                                    Galank.sendMessage(to, str(ret_))
                                 elif len(cond) == 2:
                                     num = int(cond[1])
                                     if num <= len(data["results"]):
@@ -1441,7 +1442,7 @@ def clientBot(op):
                                         removeString = "[1234567890.:]"
                                         for char in removeString:
                                             lyric = lyric.replace(char,'')
-                                        client.sendMessage(msg.to, str(lyric))
+                                        Galank.sendMessage(msg.to, str(lyric))
                             elif cmd.startswith("searchyoutube"):
                                 sep = text.split(" ")
                                 search = text.replace(sep[0] + " ","")
@@ -1457,7 +1458,7 @@ def clientBot(op):
                                     ret_ += "\n╠══[ {} ]".format(str(data["title"]))
                                     ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
                                 ret_ += "\n╚══[ Total {} ]".format(len(datas))
-                                client.sendMessage(to, str(ret_))
+                                Galank.sendMessage(to, str(ret_))
                             elif cmd.startswith("tr-"):
                                 sep = text.split("-")
                                 sep = sep[1].split(" ")
@@ -1468,30 +1469,30 @@ def clientBot(op):
                                 translator = Translator()
                                 hasil = translator.translate(say, dest=lang)
                                 A = hasil.text
-                                client.sendMessage(to, str(A))
+                                Galank.sendMessage(to, str(A))
 # Pembatas Script #
 # Pembatas Script #
                         if text.lower() == "mykey":
-                            client.sendMessage(to, "KeyCommand Saat ini adalah [ {} ]".format(str(settings["keyCommand"])))
+                            Galank.sendMessage(to, "KeyCommand Saat ini adalah [ {} ]".format(str(settings["keyCommand"])))
                         elif text.lower() == "setkey on":
                             settings["setKey"] = True
-                            client.sendMessage(to, "Berhasil mengaktifkan setkey")
+                            Galank.sendMessage(to, "Berhasil mengaktifkan setkey")
                         elif text.lower() == "setkey off":
                             settings["setKey"] = False
-                            client.sendMessage(to, "Berhasil menonaktifkan setkey")
+                            Galank.sendMessage(to, "Berhasil menonaktifkan setkey")
 # Pembatas Script #
                     elif msg.contentType == 1:
                         if settings["changePictureProfile"] == True:
-                            path = client.downloadObjectMsg(msg_id)
+                            path = Galank.downloadObjectMsg(msg_id)
                             settings["changePictureProfile"] = False
-                            client.updateProfilePicture(path)
-                            client.sendMessage(to, "Berhasil mengubah foto profile")
+                            Galank.updateProfilePicture(path)
+                            Galank.sendMessage(to, "Berhasil mengubah foto profile")
                         if msg.toType == 2:
                             if to in settings["changeGroupPicture"]:
-                                path = client.downloadObjectMsg(msg_id)
+                                path = Galank.downloadObjectMsg(msg_id)
                                 settings["changeGroupPicture"].remove(to)
-                                client.updateGroupPicture(to, path)
-                                client.sendMessage(to, "Berhasil mengubah foto group")
+                                Galank.updateGroupPicture(to, path)
+                                Galank.sendMessage(to, "Berhasil mengubah foto group")
                     elif msg.contentType == 7:
                         if settings["checkSticker"] == True:
                             stk_id = msg.contentMetadata['STKID']
@@ -1503,18 +1504,18 @@ def clientBot(op):
                             ret_ += "\n╠ STICKER VERSION : {}".format(stk_ver)
                             ret_ += "\n╠ STICKER URL : line://shop/detail/{}".format(pkg_id)
                             ret_ += "\n╚══[ Finish ]"
-                            client.sendMessage(to, str(ret_))
+                            Galank.sendMessage(to, str(ret_))
                     elif msg.contentType == 13:
                         if settings["checkContact"] == True:
                             try:
-                                contact = client.getContact(msg.contentMetadata["mid"])
+                                contact = Galank.getContact(msg.contentMetadata["mid"])
                                 if client != None:
-                                    cover = client.getProfileCoverURL(msg.contentMetadata["mid"])
+                                    cover = Galank.getProfileCoverURL(msg.contentMetadata["mid"])
                                 else:
                                     cover = "Tidak dapat masuk di line channel"
                                 path = "http://dl.profile.line-cdn.net/{}".format(str(contact.pictureStatus))
                                 try:
-                                    client.sendImageWithURL(to, str(path))
+                                    Galank.sendImageWithURL(to, str(path))
                                 except:
                                     pass
                                 ret_ = "╔══[ Details Contact ]"
@@ -1524,9 +1525,9 @@ def clientBot(op):
                                 ret_ += "\n╠ Gambar Profile : http://dl.profile.line-cdn.net/{}".format(str(contact.pictureStatus))
                                 ret_ += "\n╠ Gambar Cover : {}".format(str(cover))
                                 ret_ += "\n╚══[ Finish ]"
-                                client.sendMessage(to, str(ret_))
+                                Galank.sendMessage(to, str(ret_))
                             except:
-                                client.sendMessage(to, "Kontak tidak valid")
+                                Galank.sendMessage(to, "Kontak tidak valid")
                     elif msg.contentType == 16:
                         if settings["checkPost"] == True:
                             try:
@@ -1681,11 +1682,11 @@ def clientBot(op):
 while True:
     try:
         delete_log()
-        ops = clientPoll.singleTrace(count=50)
+        ops = GalankPoll.singleTrace(count=50)
         if ops is not None:
             for op in ops:
-                clientBot(op)
-                clientPoll.setRevision(op.revision)
+                GalankBot(op)
+                GalankPoll.setRevision(op.revision)
     except Exception as error:
         logError(error)
         
