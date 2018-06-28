@@ -271,7 +271,7 @@ def delete_log():
     for data in msg_dict:
         if (datetime.utcnow() - cTime_to_datetime(msg_dict[data]["createdTime"])) > timedelta(1):
             if "path" in msg_dict[data]:
-                client.deleteFile(msg_dict[data]["path"])
+                Galank.deleteFile(msg_dict[data]["path"])
             del msg_dict[data]
             
 def sendMention(to, text="", mids=[]):
@@ -575,7 +575,7 @@ def helptranslate():
                     "Contoh : " + key + "tr-id Galank"
     return helpTranslate
 
-def clientBot(op):
+def GalankBot(op):
     try:
         if op.type == 0:
             print ("[ 0 ] END OF OPERATION")
@@ -761,7 +761,7 @@ def clientBot(op):
                                 sep = text.split(" ")
                                 string = text.replace(sep[0] + " ","")
                                 if len(string) <= 500:
-                                    profile = client.getProfile()
+                                    profile = Galank.getProfile()
                                     profile.statusMessage = string
                                     Galank.updateProfile(profile)
                                     Galank.sendMessage(to,"Berhasil mengganti status message menjadi{}".format(str(string)))
@@ -922,7 +922,7 @@ def clientBot(op):
                                 if msg.toType == 2:
                                     group = Galank.getGroup(to)
                                     if group.preventedJoinByTicket == False:
-                                        ticket = client.reissueGroupTicket(to)
+                                        ticket = Galank.reissueGroupTicket(to)
                                         Galank.sendMessage(to, "[ Group Ticket ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
                                     else:
                                         Galank.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
@@ -959,7 +959,7 @@ def clientBot(op):
                                     gTicket = "Tidak ada"
                                 else:
                                     gQr = "Terbuka"
-                                    gTicket = "https://line.me/R/ti/g/{}".format(str(client.reissueGroupTicket(group.id)))
+                                    gTicket = "https://line.me/R/ti/g/{}".format(str(Galank.reissueGroupTicket(group.id)))
                                 path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
                                 ret_ = "╔══[ Group Info ]"
                                 ret_ += "\n╠ Nama Group : {}".format(str(group.name))
@@ -1051,7 +1051,7 @@ def clientBot(op):
                                     read['readMember'][receiver] = ""
                                     read['readTime'][receiver] = readTime
                                     read['ROM'][receiver] = {}
-                                    client.sendMessage(receiver,"Set reading point : \n" + readTime)
+                                    Galank.sendMessage(receiver,"Set reading point : \n" + readTime)
                             elif cmd == "lurking off":
                                 tz = pytz.timezone("Asia/Makassar")
                                 timeNow = datetime.now(tz=tz)
@@ -1101,7 +1101,7 @@ def clientBot(op):
                                     read['readMember'][receiver] = ""
                                     read['readTime'][receiver] = readTime
                                     read['ROM'][receiver] = {}
-                                    client.sendMessage(msg.to, "Reset reading point : \n" + readTime)
+                                    Galank.sendMessage(msg.to, "Reset reading point : \n" + readTime)
                                 else:
                                     Galank.sendMessage(msg.to, "Lurking belum diaktifkan ngapain di reset?")
                                     
@@ -1120,7 +1120,7 @@ def clientBot(op):
                                 readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
                                 if receiver in read['readPoint']:
                                     if read["ROM"][receiver].items() == []:
-                                        client.sendMessage(receiver,"Tidak Ada Sider")
+                                        Galank.sendMessage(receiver,"Tidak Ada Sider")
                                     else:
                                         chiya = []
                                         for rom in read["ROM"][receiver].items():
@@ -1182,7 +1182,7 @@ def clientBot(op):
                                 else:
                                     mc = "╔══[ Mimic List ]"
                                     for mi_d in settings["mimic"]["target"]:
-                                        mc += "\n╠ "+client.getContact(mi_d).displayName
+                                        mc += "\n╠ "+Galank.getContact(mi_d).displayName
                                     mc += "\n╚══[ Finish ]"
                                     Galank.sendMessage(msg.to,mc)
                                 
@@ -1322,9 +1322,9 @@ def clientBot(op):
                                     data = json.loads(data)
                                     if data["find"] == True:
                                         if data["media"]["mediatype"] == 1:
-                                            client.sendImageWithURL(msg.to, str(data["media"]["url"]))
+                                            Galank.sendImageWithURL(msg.to, str(data["media"]["url"]))
                                         if data["media"]["mediatype"] == 2:
-                                            client.sendVideoWithURL(msg.to, str(data["media"]["url"]))
+                                            Galank.sendVideoWithURL(msg.to, str(data["media"]["url"]))
                                         ret_ = "╔══[ Info Post ]"
                                         ret_ += "\n╠ Jumlah Like : {}".format(str(data["media"]["like_count"]))
                                         ret_ += "\n╠ Jumlah Comment : {}".format(str(data["media"]["comment_count"]))
@@ -1347,7 +1347,7 @@ def clientBot(op):
                                             if num <= len(data["url"]):
                                                 search = data["url"][num - 1]
                                                 if search["tipe"] == 1:
-                                                    client.sendImageWithURL(to, str(search["link"]))
+                                                    Galank.sendImageWithURL(to, str(search["link"]))
                                                 if search["tipe"] == 2:
                                                     Galank.sendVideoWithURL(to, str(search["link"]))
                                 except Exception as error:
@@ -1467,7 +1467,7 @@ def clientBot(op):
                                 lang = sep[0]
                                 say = text.replace("tr-" + lang + " ","")
                                 if lang not in list_language["list_translate"]:
-                                    return client.sendMessage(to, "Language not found")
+                                    return Galank.sendMessage(to, "Language not found")
                                 translator = Translator()
                                 hasil = translator.translate(say, dest=lang)
                                 A = hasil.text
@@ -1511,7 +1511,7 @@ def clientBot(op):
                         if settings["checkContact"] == True:
                             try:
                                 contact = Galank.getContact(msg.contentMetadata["mid"])
-                                if client != None:
+                                if Galank != None:
                                     cover = Galank.getProfileCoverURL(msg.contentMetadata["mid"])
                                 else:
                                     cover = "Tidak dapat masuk di line channel"
@@ -1535,7 +1535,7 @@ def clientBot(op):
                             try:
                                 ret_ = "╔══[ Details Post ]"
                                 if msg.contentMetadata["serviceType"] == "GB":
-                                    contact = client.getContact(sender)
+                                    contact = Galank.getContact(sender)
                                     auth = "\n╠ Penulis : {}".format(str(contact.displayName))
                                 else:
                                     auth = "\n╠ Penulis : {}".format(str(msg.contentMetadata["serviceName"]))
@@ -1582,7 +1582,7 @@ def clientBot(op):
                 sender = msg._from
                 if msg.toType == 0 or msg.toType == 1 or msg.toType == 2:
                     if msg.toType == 0:
-                        if sender != client.profile.mid:
+                        if sender != Galank.profile.mid:
                             to = sender
                         else:
                             to = receiver
@@ -1603,7 +1603,7 @@ def clientBot(op):
                         try:
                             msg = op.message
                             if msg.toType == 0:
-                                client.log("[{} : {}]".format(str(msg._from), str(msg.text)))
+                                Galank.log("[{} : {}]".format(str(msg._from), str(msg.text)))
                             else:
                                 Galank.log("[{} : {}]".format(str(msg.to), str(msg.text)))
                                 msg_dict[msg.id] = {"text": msg.text, "from": msg._from, "createdTime": msg.createdTime, "contentType": msg.contentType, "contentMetadata": msg.contentMetadata}
@@ -1621,7 +1621,7 @@ def clientBot(op):
                                     if l not in n_links:
                                         n_links.append(l)
                                 for ticket_id in n_links:
-                                    group = client.findGroupByTicket(ticket_id)
+                                    group = Galank.findGroupByTicket(ticket_id)
                                     Galank.acceptGroupInvitationByTicket(group.id,ticket_id)
                                     Galank.sendMessage(to, "Berhasil masuk ke group %s" % str(group.name))
                         if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -1630,7 +1630,7 @@ def clientBot(op):
                             mentionees = mention['MENTIONEES']
                             lists = []
                             for mention in mentionees:
-                                if clientMid in mention["M"]:
+                                if GalankMid in mention["M"]:
                                     if settings["autoRespon"] == True:
                                         sendMention(sender, "Oi Asw @!,jangan main tag tag", [sender])
                                     break
@@ -1645,7 +1645,7 @@ def clientBot(op):
                     msg_id = op.param2
                     if msg_id in msg_dict:
                         if msg_dict[msg_id]["from"]:
-                            contact = client.getContact(msg_dict[msg_id]["from"])
+                            contact = Galank.getContact(msg_dict[msg_id]["from"])
                             if contact.displayNameOverridden != None:
                                 name_ = contact.displayNameOverridden
                             else:
