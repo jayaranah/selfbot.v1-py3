@@ -1563,9 +1563,9 @@ def clientBot(op):
                                     text = "\n╠ Tulisan : {}".format(str(msg.contentMetadata["text"]))
                                     ret_ += text
                                 ret_ += "\n╚══[ Finish ]"
-                                client.sendMessage(to, str(ret_))
+                                Galank.sendMessage(to, str(ret_))
                             except:
-                                client.sendMessage(to, "Post tidak valid")
+                                Galank.sendMessage(to, "Post tidak valid")
             except Exception as error:
                 logError(error)
                 traceback.print_tb(error.__traceback__)
@@ -1589,21 +1589,21 @@ def clientBot(op):
                     elif msg.toType == 2:
                         to = receiver
                     if settings["autoRead"] == True:
-                        client.sendChatChecked(to, msg_id)
+                        Galank.sendChatChecked(to, msg_id)
                     if to in read["readPoint"]:
                         if sender not in read["ROM"][to]:
                             read["ROM"][to][sender] = True
                     if sender in settings["mimic"]["target"] and settings["mimic"]["status"] == True and settings["mimic"]["target"][sender] == True:
                         text = msg.text
                         if text is not None:
-                            client.sendMessage(msg.to,text)
+                            Galank.sendMessage(msg.to,text)
                     if settings["unsendMessage"] == True:
                         try:
                             msg = op.message
                             if msg.toType == 0:
                                 client.log("[{} : {}]".format(str(msg._from), str(msg.text)))
                             else:
-                                client.log("[{} : {}]".format(str(msg.to), str(msg.text)))
+                                Galank.log("[{} : {}]".format(str(msg.to), str(msg.text)))
                                 msg_dict[msg.id] = {"text": msg.text, "from": msg._from, "createdTime": msg.createdTime, "contentType": msg.contentType, "contentMetadata": msg.contentMetadata}
                         except Exception as error:
                             logError(error)
@@ -1620,8 +1620,8 @@ def clientBot(op):
                                         n_links.append(l)
                                 for ticket_id in n_links:
                                     group = client.findGroupByTicket(ticket_id)
-                                    client.acceptGroupInvitationByTicket(group.id,ticket_id)
-                                    client.sendMessage(to, "Berhasil masuk ke group %s" % str(group.name))
+                                    Galank.acceptGroupInvitationByTicket(group.id,ticket_id)
+                                    Galank.sendMessage(to, "Berhasil masuk ke group %s" % str(group.name))
                         if 'MENTION' in msg.contentMetadata.keys()!= None:
                             names = re.findall(r'@(\w+)', text)
                             mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -1656,7 +1656,7 @@ def clientBot(op):
                                 sendMention(at, str(ret_), [contact.mid])
                             del msg_dict[msg_id]
                         else:
-                            client.sendMessage(at,"SentMessage cancelled,But I didn't have log data.\nSorry > <")
+                            Galank.sendMessage(at,"SentMessage cancelled,But I didn't have log data.\nSorry > <")
                 except Exception as error:
                     logError(error)
                     traceback.print_tb(error.__traceback__)
