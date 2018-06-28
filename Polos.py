@@ -13,8 +13,18 @@ import time, random, sys, json, codecs, threading, glob, re, string, os, request
 import youtube_dl
 from bs4 import BeautifulSoup
 
-Galank = LINE()
-#Galank = LINE("")
+# JIKA INGIN LOGIN LEWAT QR 
+# LOGIN TOKEN KASIH TANDA PAGAR(#)
+# KALAU LOGIN PAKE TOKEN
+# LOGIN QR PAGARIN (#)
+# JELASKAN,JANGAN NANYA MULU
+# MUMET JELASIN
+# UDAH KASIH SC GRATIS MASIH NANYA
+# KEPO,IN AJA ID LINE: fuck.you__
+# NANYA BOLEH ASAL JANGAN NANYA KELEWATAN
+
+Galank = LINE()# LOGIN QR
+#Galank = LINE("TOKETMU SAYANG")# LOGIN TOKEN
 GalankMid = Galank.profile.mid
 GalankProfile = Galank.getProfile()
 GalankSettings = Galank.getSettings()
