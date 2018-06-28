@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from LineAPI.linepy import *
-from LineAPI.akad.ttypes import Message
-from LineAPI.akad.ttypes import ContentType as Type
+from SLACKBOT.linepy import *
+from SLACKBOT.akad.ttypes import Message
+from SLACKBOT.akad.ttypes import ContentType as Type
 from gtts import gTTS
 from time import sleep
 from datetime import datetime, timedelta
@@ -10,6 +10,8 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, six, ast, pytz, urllib, urllib3, urllib.parse, traceback, atexit
+import youtube_dl
+from bs4 import BeautifulSoup
 
 Galank = LINE()
 #Galank = LINE("")
