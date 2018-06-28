@@ -3,6 +3,9 @@
 # https://line.me/ti/g2/LMAIQCF1K0
 # Saling Berbagi Ilmu
 # Mastah Jangan Pelit
+
+# TUTORIAL INSTALL
+
 # apt update
 # apt upgrade
 # apt install git
