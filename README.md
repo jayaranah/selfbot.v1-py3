@@ -3,7 +3,8 @@
 # https://line.me/ti/g2/LMAIQCF1K0
 # Saling Berbagi Ilmu
 # Mastah Jangan Pelit
-
+# Info lebih lanjut
+# Add Me:(http://line.me/ti/p/%40ryp6149l)
 # TUTORIAL INSTALL
 
 # apt update
@@ -29,4 +30,4 @@
 # TΣΔM SLΔCҜβΩT
 
 # ADD LINE BY OWNER
-# line.me/ti/p/~fuck.you__
+# http://line.me/ti/p/%40ryp6149l
