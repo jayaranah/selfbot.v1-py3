@@ -73,209 +73,213 @@ responsename3 = kc.getProfile().displayName
 responsename4 = km.getProfile().displayName
 responsename5 = kb.getProfile().displayName
 
-setowner ="""╔═════════════\n╠۞➢sᴇʟғʙᴏᴛ-ᴍᴇɴᴜ\n╠═════════════
-╠۞➢ Me
-╠۞➢ Mid
-╠۞➢ Mid ۞➢ @
-╠۞➢ Like ۞➢ @
-╠۞➢ Url
-╠۞➢ Open
-╠۞➢ Close
-╠۞➢ Ginfo
-╠۞➢ Kiss
-╠۞➢ Creator
-╠۞➢ Status
-╠۞➢ Sp
-╠۞➢ Rspeed
-╠۞➢ Come
-╠۞➢ Ombye
-╠۞➢ Leave all
-╠۞➢ Me leave
-╠۞➢ Responame
-╠═══════════════
-╠═۞➢ᴀᴅᴍɪɴ ᴍᴇɴᴜ 
-╠═══════════════
-╠۞➢ Kick ۞➢ @
-╠۞➢ Kick1 ۞➢ @
-╠۞➢ Mayhem
-╠۞➢ Blc
-╠۞➢ Ban ۞➢ @
-╠۞➢ Unban ۞➢ @
-╠۞➢ Ban:on
-╠۞➢ Ban:off
-╠۞➢ Unban:on
-╠۞➢ Unban:off
-╠۞➢ Banlist
-╠۞➢ Clearban
-╠۞➢ Glist
-╠۞➢ Friendlist
-╠۞➢ B1: ۞➢ Text
-╠۞➢ B2: ۞➢ Text
-╠۞➢ B3: ۞➢ Text
-╠۞➢ B4: ۞➢ Text
-╠۞➢ B5: ۞➢ Text
-╠۞➢ Myname: ۞➢ Text
-╠۞➢ Restart
-╠۞➢ Informasi
-╠۞➢ Bup
-╠۞➢ Gup
-╠۞➢ Me up
-╠۞➢ Remove
-╠════════════════
-╠═۞➢sᴇᴛᴛɪɴɢ ᴍᴇɴᴜ 
-╠════════════════
-╠۞➢ Sider ۞➢ on/off
-╠۞➢ Lurking ۞➢ on/off
-╠۞➢ Lurkers
-╠۞➢ Cek sider
-╠۞➢ Cek spam
-╠۞➢ Cek pesan
-╠۞➢ Cek respon
-╠۞➢ Cek welcome
-╠۞➢ Set sider: ۞➢ Text
-╠۞➢ Set spam: ۞➢Text
-╠۞➢ Set pesan: ۞➢ Text
-╠۞➢ Set respon: ۞➢ Text
-╠۞➢ Set welcome: ۞➢ Text
-╠۞➢ Sticker ۞➢ on/off
-╠۞➢ Contact ۞➢ on/off
-╠۞➢ Autojoin ۞➢ on/off
-╠۞➢ Autoadd ۞➢on/off
-╠۞➢ Autoleave ۞➢ on/off
-╠۞➢ Welcome ۞➢ on/off
-╠۞➢ Autorespon ۞➢on/off
-╠۞➢ Gift: ۞➢ Mid ۞➢ Jumlah
-╠۞➢ Spam: ۞➢ Mid ۞➢ Jumlah
-╠══════════════════
-╠۞➢ [ sᴇʟғʙᴏᴛ ᴠ.1 ]
-╠═۞➢ [ ᴄʀᴇᴀᴛᴇᴅ ʙʏ : ]
-╠۞➢ [ ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ ]
-╚══════════════════
+setowner ="""╭═══════╬╬════════╮
+╞☪ TΣΔM SLΔCҜβΩT
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Me
+╞☪ Mid
+╞☪ Mid [@]
+╞☪ Like [@]
+╞☪ Url
+╞☪ Open
+╞☪ Close
+╞☪ Ginfo
+╞☪ Kiss
+╞☪ Creator
+╞☪ Settings
+╞☪ Speed
+╞☪ Responsp
+╞☪ Panggil
+╞☪ Cabut.
+╞☪ Leave all
+╞☪ Me leave
+╞☪ Responsename
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ ᴀᴅᴍɪɴ ᴍᴇɴᴜ 
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Kick [@]
+╞☪ Kamu [@]
+╞☪ Mayhem
+╞☪ Blc
+╞☪ Ban [@]
+╞☪ Unban [@]
+╞☪ Ban:on/off
+╞☪ Unban:on/off
+╞☪ Banlist
+╞☪ Clearban
+╞☪ Glist
+╞☪ Friendlist
+╞☪ B1: [Text]
+╞☪ B2: [Text]
+╞☪ B3: [Text]
+╞☪ B4: [Text]
+╞☪ B5: [Text]
+╞☪ Myname: [Text]
+╞☪ Restart
+╞☪ Informasi
+╞☪ Bot upicture
+╞☪ Group upicture
+╞☪ Me upicture
+╞☪ Remove
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ sᴇᴛᴛɪɴɢ ᴍᴇɴᴜ 
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Sider on/off
+╞☪ Lurking on/off
+╞☪ Lurkers
+╞☪ Cek sider
+╞☪ Cek spam
+╞☪ Cek pesan
+╞☪ Cek respon
+╞☪ Cek welcome
+╞☪ Set sider: [Text]
+╞☪ Set spam: [Text]
+╞☪ Set pesan: [Text]
+╞☪ Set respon: [Text]
+╞☪ Set welcome: [Text]
+╞☪ Sticker on/off
+╞☪ Contact on/off
+╞☪ Autojoin on/off
+╞☪ Autoadd on/off
+╞☪ Autoleave on/off
+╞☪ Welcome on/off
+╞☪ Autorespon on/off
+╞☪ Gift: [Mid] [Jumlah]
+╞☪ Spam: [Mid] [Jumlah]
+╰═══════╬╬════════╯
 """
 
-helpMessage ="""╔══════════════\n╠═۞➢ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ\n╠══════════════\n╠═۞➢ʙᴏᴛ ᴜsᴇʀ\n╠══════════════
-╠۞➢ Me
-╠۞➢ Mid
-╠۞➢ Mid ۞➢ @
-╠۞➢ Like ۞➢ @
-╠۞➢ Info ۞➢ @
-╠۞➢ Url
-╠۞➢ Open
-╠۞➢ Close
-╠۞➢ Ginfo
-╠۞➢ Kiss
-╠۞➢ Creator
-╠۞➢ Status
-╠۞➢ Sp
-╠۞➢ Rspeed
-╠۞➢ Come
-╠۞➢ Ombye
-╠۞➢ Leave all
-╠۞➢ Me leave
-╠۞➢ Responame
-╠۞➢ Kick ۞➢ @
-╠۞➢ Kick1 ۞➢ @
-╠۞➢ Mayhem
-╠═══════════════
-╠۞➢ᴄᴏᴍᴍᴀɴᴅ ʙʟᴀᴄᴋʟɪsᴛ
-╠═══════════════
-╠۞➢ Blc
-╠۞➢ Ban ۞➢ @
-╠۞➢ Unban ۞➢ @
-╠۞➢ Ban:on
-╠۞➢ Ban:off
-╠۞➢ Unban:on
-╠۞➢ Unban:off
-╠۞➢ Banlist
-╠۞➢ Clearban
-╠۞➢ Glist
-╠۞➢ Friendlist
-╠۞➢ Restart
-╠════════════════
-╠═۞➢ɪɴғᴏ ᴍᴇɴᴜ
-╠════════════════
-╠۞➢ Informasi
-╠۞➢ Bup
-╠۞➢ Gup
-╠۞➢ Me up
-╠۞➢ Remove
-╠۞➢ Sider ۞➢ on/off
-╠۞➢ Lurking ۞➢ on/off
-╠۞➢ Lurkers
-╠۞➢ Cek spam
-╠۞➢ Cek pesan
-╠۞➢ Cek respon
-╠۞➢ Cek welcome
-╠۞➢ Set spam: ۞➢ Text
-╠۞➢ Set pesan: ۞➢ Text
-╠۞➢ Set respon: ۞➢ Text
-╠۞➢ Set welcome: ۞➢ Text
-╠۞➢ Sticker ۞➢ on/off
-╠۞➢ Contact ۞➢ on/off
-╠۞➢ Autojoin ۞➢ on/off
-╠۞➢ Autoadd ۞➢ on/off
-╠۞➢ Autoleave ۞➢ on/off
-╠۞➢ Welcome ۞➢ on/off
-╠۞➢ Autorespon ۞➢ on/off
-╠════════════════
-╠۞➢ [ᴛʜᴀɴᴋs ғᴏʀ ]
-╠═۞➢ [ ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ ] ╚════════════════
+helpMessage ="""╭═══════╬╬════════╮
+╞☪ TΣΔM SLΔCҜβΩT
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Me
+╞☪ Mid
+╞☪ Mid [@]
+╞☪ Like [@]
+╞☪ Info [@]
+╞☪ Url
+╞☪ Open
+╞☪ Close
+╞☪ Ginfo
+╞☪ Kiss
+╞☪ Creator
+╞☪ Settings
+╞☪ Speed
+╞☪ Responsp
+╞☪ Panggil
+╞☪ Cabut.
+╞☪ Leave all
+╞☪ Me leave
+╞☪ Responsename
+╞☪ Kick [@]
+╞☪ Kamu [@]
+╞☪ Mayhem
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ ᴄᴏᴍᴍᴀɴᴅ ʙʟᴀᴄᴋʟɪsᴛ
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Blc
+╞☪ Ban [@]
+╞☪ Unban [@]
+╞☪ Ban:on/off
+╞☪ Unban:on/off
+╞☪ Banlist
+╞☪ Clearban
+╞☪ Glist
+╞☪ Friendlist
+╞☪ Restart
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ ɪɴғᴏ ᴍᴇɴᴜ βΩT
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Informasi
+╞☪ Bot upicture
+╞☪ Group upicture
+╞☪ Me upicture
+╞☪ Remove
+╞☪ Sider on/off
+╞☪ Lurking on/off
+╞☪ Lurkers
+╞☪ Cek spam
+╞☪ Cek pesan
+╞☪ Cek respon
+╞☪ Cek welcome
+╞☪ Set spam: [Text]
+╞☪ Set pesan: [Text]
+╞☪ Set respon: [Text]
+╞☪ Set welcome: [Text]
+╞☪ Sticker on/off
+╞☪ Contact on/off
+╞☪ Autojoin on/off
+╞☪ Autoadd on/off
+╞☪ Autoleave on/off
+╞☪ Welcome on/off
+╞☪ Autorespon on/off
+╰═══════╬╬════════╯
 """
 
-setadmin ="""╔══════════════\n╠۞➢ᴍᴇɴᴜ sᴘᴇsɪᴀʟ\n╠══════════════
-╠۞➢ Staff:on
-╠۞➢ Staff:off
-╠۞➢ Staff add ۞➢ @
-╠۞➢ Staff dell ۞➢ @
-╠۞➢ Admin:on
-╠۞➢ Admin:off
-╠۞➢ Admin add ۞➢ @
-╠۞➢ Admin dell ۞➢ @
-╠۞➢ Bot:on
-╠۞➢ Bot:repeat
-╠۞➢ Bot add ۞➢ @
-╠۞➢ Bot dell ۞➢ @
-╠۞➢ Botlist
-╠۞➢ Contact bot
-╠۞➢ Talk ۞➢ on/off
-╠۞➢ Talklist
-╠۞➢ Talkban:on
-╠۞➢ Talkban:off
-╠۞➢ Talkban ۞➢ @
-╠۞➢ Talkdell ۞➢ @
-╠۞➢ Refresh
-╠۞➢ Adminlist
-╠════════════════
-╠۞➢sᴇʟғʙᴏᴛ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ
-╠════════════════
-╠۞➢ No tag ۞➢ on/off
-╠۞➢ No kick ۞➢ on/off
-╠۞➢ No join ۞➢ on/off
-╠۞➢ No cancel ۞➢ on/off
-╠۞➢ Block url ۞➢ on/off
-╠۞➢ Mode protection ۞➢ on/off
-╠۞➢ Listpro
-╠════════════════         
-╠۞➢sᴇʟғʙᴏᴛ ʜɪʙᴜʀᴀɴ
-╠════════════════
-╠۞➢ .cek grup ۞➢ @
-╠۞➢ .ginfo: ۞➢ Nomer
-╠۞➢ .listmem: ۞➢ Nomer
-╠۞➢ .ig: ۞➢ Nama 
-╠۞➢ .jumlah: ۞➢ Angka
-╠۞➢ .spamtag ۞➢@
-╠۞➢ .cek date: ۞➢ Tgl-bln-thn
-╠۞➢ .searchid ۞➢ IDLine
-╠۞➢ .broadcast: ۞➢ Text
-╠۞➢ .mp3: ۞➢ Penyanyi - judul
-╠۞➢ .video: ۞➢ Penyanyi - judul
-╠۞➢ .cek cuaca: ۞➢ Nama kota
-╠۞➢ .jadwal sholat ۞➢ Nama kota
-╠══════════════════
-╠═۞➢ [ sᴇʟғʙᴏᴛ ᴠ.1 ]
-╠۞➢ [ ᴄʀᴇᴀᴛᴇᴅ ʙʏ : ]
-╠═۞➢ [ ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ ]
-╚══════════════════
+setadmin ="""╭═══════╬╬════════╮
+╞☪ ᴍᴇɴᴜ sᴘᴇsɪᴀʟ
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Staff:on/off
+╞☪ Staff add [@]
+╞☪ Staff dell [@]
+╞☪ Admin:on/off
+╞☪ Admin add [@]
+╞☪ Admin dell [@]
+╞☪ Bot:on
+╞☪ Bot:repeat
+╞☪ Bot add [@]
+╞☪ Bot dell [@]
+╞☪ Botlist
+╞☪ Contact bot
+╞☪ Talk on/off
+╞☪ Talklist
+╞☪ Talkban:on/off
+╞☪ Talkban [@]
+╞☪ Talkdell [@]
+╞☪ Refresh
+╞☪ Adminlist
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ sᴇʟғʙᴏᴛ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ Ntag on/off
+╞☪ Nkick on/off
+╞☪ Njoin on/off
+╞☪ Ncancel on/off
+╞☪ Block url on/off
+╞☪ Mode protection on/off
+╞☪ Listpro
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ sᴇʟғʙᴏᴛ ʜɪʙᴜʀᴀɴ
+╰═══════╬╬════════╯
+╭═══════╬╬════════╮
+╞☪ .cek grup [@]
+╞☪ .ginfo: [Nomer]
+╞☪ .listmem: [Nomer]
+╞☪ .ig: [Nama] 
+╞☪ .jumlah: [Angka]
+╞☪ .spamtag [@]
+╞☪ .cek date: [Tgl-bln-thn]
+╞☪ .searchid [IDLine]
+╞☪ .broadcast: [Text]
+╞☪ .mp3: [Penyanyi - judul]
+╞☪ .video: [Penyanyi - judul]
+╞☪ .cek cuaca: [Nama kota]
+╞☪ .jadwal sholat [Nama kota]
+╰═══════╬╬════════╯
 """
 settings = {
     "Picture":False,
@@ -339,7 +343,7 @@ wait = {
     "mention":"Masuk kuy awas dingin",
     "Respontag":"Njirrr tag pc napa",
     "welcome":"Wellcome to",
-    "comment":"Like By : ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ",
+    "comment":"Like By : TΣΔM SLΔCҜβΩT",
     "message":"Thanks for add me 😃",
     }
 
@@ -1325,35 +1329,35 @@ def bot(op):
                         cl.sendVideoWithURL(msg.to, 'http://dl.profile.line.naver.jp'+foto_+'/vp.small')
                     else:
                         cl.sendImageWithURL(msg.to, 'http://dl.profile.line.naver.jp'+foto_)
-               elif text.lower() == 'status':
+               elif text.lower() == 'settings':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
-                   md = "╔════════════\n╠۞➢sᴇᴛᴛɪɴɢ ᴘʀᴏ ʙᴏᴛ\n╠════════════\n"
-                   if wait["sticker"] == True: md+="╠۞➢ Sticker「⚫」\n"
-                   else: md+="╠۞➢ Sticker「⚪」\n"
-                   if wait["contact"] == True: md+="╠۞➢ Contact「⚫」\n"
-                   else: md+="╠۞➢ Contact「⚪」\n"
-                   if wait["talkban"] == True: md+="╠۞➢ Talkban「⚫」\n"
-                   else: md+="╠۞➢ Talkban「⚪」\n"
-                   if wait["Mentionkick"] == True: md+="╠۞➢ No tag「⚫」\n"
-                   else: md+="╠۞➢ No tag「⚪」\n"
-                   if msg.to in protectkick: md+="╠۞➢ No kick「⚫」\n"
-                   else: md+="╠۞➢ No kick「⚪」\n"
-                   if msg.to in protectjoin: md+="╠۞➢ No join「⚫」\n"
-                   else: md+="╠۞➢ No join「⚪」\n"
-                   if msg.to in protectqr: md+="╠۞➢ Block url「⚫」\n"
-                   else: md+="╠۞➢ Block url「⚪」\n"
-                   if msg.to in protectcancel: md+="╠۞➢ No cancel「⚫」\n"
-                   else: md+="╠۞➢ No cancel「⚪」\n"
-                   if msg.to in welcome: md+="╠۞➢ Welcome「⚫」\n"
-                   else: md+="╠۞➢ Welcome「⚪」\n"
-                   if wait["autoJoin"] == True: md+="╠۞➢ Autojoin「⚫」\n"
-                   else: md+="╠۞➢ Autojoin「⚪」\n"
-                   if wait["autoAdd"] == True: md+="╠۞➢ Autoadd「⚫」\n"
-                   else: md+="╠۞➢ Autoadd「⚪」\n"
-                   if wait["autoLeave"] == True: md+="╠۞➢ Autoleave「⚫」\n"
-                   else: md+="╠۞➢ Autoleave「⚪」\n"
-                   if wait["detectMention"] == True: md+="╠۞➢ Autorespon「⚫」"
-                   else: md+="╠۞➢ Autorespon「⚪」\n╠════════════\n╠۞➢sᴇᴛᴛɪɴɢ ᴘʀᴏᴛeᴄᴛɪᴏɴ\n╠۞➢sᴇʟғʙᴏᴛ ᴠ.1\n╠۞➢ᴄʀᴇᴀᴛᴇᴅ ʙʏ : \n╠۞➢ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ\n╚════════════"
+                   md = "╭═══════╬╬════════╮\n╞☪ sᴇᴛᴛɪɴɢ ᴘʀᴏ ʙᴏᴛ\n╰═══════╬╬════════╯\n╭═══════╬╬════════╮\n"
+                   if wait["sticker"] == True: md+="╞☪ Sticker「⚫」\n"
+                   else: md+="╞☪ Sticker「⚪」\n"
+                   if wait["contact"] == True: md+="╞☪ Contact「⚫」\n"
+                   else: md+="╞☪ Contact「⚪」\n"
+                   if wait["talkban"] == True: md+="╞☪ Talkban「⚫」\n"
+                   else: md+="╞☪ Talkban「⚪」\n"
+                   if wait["Mentionkick"] == True: md+="╞☪ No tag「⚫」\n"
+                   else: md+="╞☪ No tag「⚪」\n"
+                   if msg.to in protectkick: md+="╞☪ No kick「⚫」\n"
+                   else: md+="╞☪ No kick「⚪」\n"
+                   if msg.to in protectjoin: md+="╞☪ No join「⚫」\n"
+                   else: md+="╞☪ No join「⚪」\n"
+                   if msg.to in protectqr: md+="╞☪ Block url「⚫」\n"
+                   else: md+="╞☪ Block url「⚪」\n"
+                   if msg.to in protectcancel: md+="╞☪ No cancel「⚫」\n"
+                   else: md+="╞☪ No cancel「⚪」\n"
+                   if msg.to in welcome: md+="╞☪ Welcome「⚫」\n"
+                   else: md+="╞☪ Welcome「⚪」\n"
+                   if wait["autoJoin"] == True: md+="╞☪ Autojoin「⚫」\n"
+                   else: md+="╞☪ Autojoin「⚪」\n"
+                   if wait["autoAdd"] == True: md+="╞☪ Autoadd「⚫」\n"
+                   else: md+="╞☪ Autoadd「⚪」\n"
+                   if wait["autoLeave"] == True: md+="╞☪ Autoleave「⚫」\n"
+                   else: md+="╞☪ Autoleave「⚪」\n"
+                   if wait["detectMention"] == True: md+="╞☪ Autorespon「⚫」"
+                   else: md+="╞☪ Autorespon「⚪」\n╰═══════╬╬════════╯\n╭═══════╬╬════════╮\n╞☪ sᴇᴛᴛɪɴɢ ᴘʀᴏᴛeᴄᴛɪᴏɴ\n╰═══════╬╬════════╯"
                    cl.sendMessage(msg.to, md)
                elif text.lower() == 'listpro':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
@@ -1389,7 +1393,7 @@ def bot(op):
                        d = d + 1
                        end = "\n"
                        md += str(d) + ". " +G.name+ "\n"
-                   cl.sendMessage(msg.to,"۞➢[ LIST PROTECTION ]\n\n۞➢ [ PROTECT URL : ]\n"+ma+"\n۞➢ [ PROTECT KICK : ]\n"+mb+"\n۞➢ [ PROTECT JOIN : ]\n"+mc+"\n۞➢  [ PROTECT CANCEL : ]\n"+md)
+                   cl.sendMessage(msg.to,"[ LIST PROTECTION ]\n\n [ PROTECT URL : ]\n"+ma+"\n [ PROTECT KICK : ]\n"+mb+"\n [ PROTECT JOIN : ]\n"+mc+"\n  [ PROTECT CANCEL : ]\n"+md)
                elif text.lower() == "adminlist":
                        if msg._from in owner or msg._from in admin or msg._from in staff:
                                 ma = ""
@@ -1410,13 +1414,13 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"۞➢[ LIST ADMIN ]\n\n۞➢ Owner:\n"+ma+"\n۞➢ Admin:\n"+mb+"\n۞➢ Staff:\n"+mc+"\n۞➢「%s」ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ" %(str(len(owner)+len(admin)+len(staff))))
+                                cl.sendMessage(msg.to,"[ LIST ADMIN ]\n\n Owner:\n"+ma+"\n Admin:\n"+mb+"\n Staff:\n"+mc+"\n「%s」TΣΔM SLΔCҜβΩT" %(str(len(owner)+len(admin)+len(staff))))
                elif text.lower() == 'creator':
                  if msg._from in Saints:
                    if creator == []:
                         cl.sendMessage(msg.to,"Kosong")
                    else:
-                        cl.sendMessage(msg.to, "۞➢ ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ")
+                        cl.sendMessage(msg.to, "TΣΔM SLΔCҜβΩT")
                         h = ""
                         for i in creator:
                              h = cl.getContact(i)
@@ -1564,16 +1568,16 @@ def bot(op):
                                 cl.sendMessage(to,"۞➢Group Name : [ " + str(G.name) + " ]\n\n۞➢   [ List Member ]\n" + ret_ + "\n\n「Total %i Members」" % len(G.members))
                             except: 
                                 pass
-               elif msg.text.lower() == "gup":
+               elif msg.text.lower() == "group upicture":
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    if msg.toType == 2:
                     settings["groupPicture"] = True
                     cl.sendMessage(msg.to, "Send pict")
-               elif msg.text.lower() == 'bup':
+               elif msg.text.lower() == 'bot upicture':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                     settings["changePicture"] = True
                     cl.sendMessage(msg.to, "Send pict")
-               elif msg.text.lower() == 'me up':
+               elif msg.text.lower() == 'me upicture':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                     settings["Picture"] = True
                     cl.sendMessage(msg.to, "Send pict")
@@ -1729,7 +1733,7 @@ def bot(op):
                         else:
                            msgs = "Protect URL already off"
                         cl.sendMessage(msg.to, "「Protect URL」\n" + msgs)
-               elif 'No kick ' in msg.text:
+               elif 'Nkick ' in msg.text:
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    spl = msg.text.replace('No kick ','')
                    if spl == 'on':
@@ -1748,7 +1752,7 @@ def bot(op):
                        else:
                            msgs = "Protect Kick already off"
                        cl.sendMessage(msg.to, "「Protect Kick」\n" + msgs)
-               elif 'No join ' in msg.text:
+               elif 'Njoin ' in msg.text:
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    spl = msg.text.replace('No join ','')
                    if spl == 'on':
@@ -1767,7 +1771,7 @@ def bot(op):
                        else:
                            msgs = "Protect Join already off"
                        cl.sendMessage(msg.to, "「Protect Join」\n" + msgs)
-               elif 'No cancel ' in msg.text:
+               elif 'Ncancel ' in msg.text:
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    spl = msg.text.replace('No cancel ','')
                    if spl == 'on':
@@ -2133,7 +2137,7 @@ def bot(op):
                    cl.sendMessage(msg.to, None, contentMetadata={'mid': Dmid}, contentType=13)
                    cl.sendMessage(msg.to, None, contentMetadata={'mid': Emid}, contentType=13)
                    cl.sendMessage(msg.to, None, contentMetadata={'mid': Zmid}, contentType=13)
-               elif text.lower() == 'responame':
+               elif text.lower() == 'responsename':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    ki.sendMessage(msg.to,responsename1)
                    kk.sendMessage(msg.to,responsename2)
@@ -2149,7 +2153,7 @@ def bot(op):
                    gid = km.getGroupIdsJoined()
                    gid = kb.getGroupIdsJoined()
                    for i in gid:
-                       ki.sendMessage(i, "Sorry, ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ dipaksa keluar oleh owner\nSilahkan hubungi owner ")
+                       ki.sendMessage(i, "Sorry, SLΔCҜβΩT dipaksa keluar oleh owner\nSilahkan hubungi owner ")
                        ki.leaveGroup(i)
                        kk.leaveGroup(i)
                        kc.leaveGroup(i)
@@ -2164,7 +2168,7 @@ def bot(op):
                elif text.lower() == 'bye':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    sw.leaveGroup(msg.to)
-               elif text.lower() == 'bye.':
+               elif text.lower() == 'cabut.':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    ki.leaveGroup(msg.to)
                    kk.leaveGroup(msg.to)
@@ -2300,7 +2304,7 @@ def bot(op):
                                   cl.updateGroup(G)
                              except:
                                   pass
-               elif text.lower() == 'rspeed':
+               elif text.lower() == 'responsp':
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                                 get_profile_time_start = time.time()
                                 get_profile = cl.getProfile()
@@ -2369,7 +2373,7 @@ def bot(op):
                          cl.updateGroup(X)
                      except:
                          pass
-               elif "Kick1" in msg.text:
+               elif "Kamu" in msg.text:
                  if msg._from in owner or msg._from in admin or msg._from in staff:
                    key = eval(msg.contentMetadata["MENTION"])
                    key["MENTIONEES"][0]["M"]
@@ -2523,7 +2527,7 @@ def bot(op):
                      cl.sendMessage(msg.to,"Bots kosong")
                    else:
                        cl.sendMessage(msg.to,"Wait...")
-                       mc = "۞➢[ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ List ]\n"
+                       mc = "[SLΔCҜβΩT List ]\n"
                        num=1
                        ragets = cl.getContacts(Bots)
                        for mi_d in ragets:
@@ -2944,7 +2948,7 @@ def bot(op):
                                 if ngroup == "":
                                       cl.sendMessage(to, "CONTACT NOT FOUND")
                                 else:
-                                    cl.sendMessage(to, "۞➢ ᴄʀᴀᴢʏ ˣ10 ᏴϴͲ Group\n%s\n"%(ngroup))
+                                    cl.sendMessage(to, "SLΔCҜβΩT Group\n%s\n"%(ngroup))
     except Exception as error:
         print (error)
 
