@@ -24,8 +24,8 @@ from bs4 import BeautifulSoup
 # http://line.me/ti/p/%40ryp6149l
 # NANYA BOLEH ASAL JANGAN NANYA KELEWATAN
 
-Galank = LINE()# LOGIN QR
-#Galank = LINE("TOKETMU SAYANG")# LOGIN TOKEN
+#Galank = LINE()# LOGIN QR
+Galank = LINE("EvPBUqWwxt6DbbscHvM7.Egq9cEqQnOnQf8YrIwoOTW.byUb6Iui9HU9FkSPk9eAp1lXiYyqzmRb0lq15xOWhtA=")# LOGIN TOKEN
 GalankMid = Galank.profile.mid
 GalankProfile = Galank.getProfile()
 GalankSettings = Galank.getSettings()
