@@ -28,11 +28,11 @@ class Config(object):
         'LINE_SERVICES': '1459630796'
     }
 
-    APP_TYPE    = ApplicationType._VALUES_TO_NAMES[96]
-    APP_VER     = '8.4.1'
+    APP_TYPE    = ApplicationType._VALUES_TO_NAMES[368]
+    APP_VER     = '2.1.5'
     CARRIER     = '51089, 1-0'
     SYSTEM_NAME = 'SLACKBOT'
-    SYSTEM_VER  = '8.22.17'
+    SYSTEM_VER  = '12.1.1'
     IP_ADDR     = '8.8.8.8'
     EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 
