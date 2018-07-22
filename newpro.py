@@ -64,7 +64,7 @@ Zmid = sw.getProfile().mid
 KAC = [cl,ki,kk,kc]
 ABC = [ki,kk,kc,km,kb]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Zmid]
-Slackbot = admin + staff
+SLACKBOT = admin + staff
 
 protectqr = []
 protectkick = []
@@ -939,19 +939,19 @@ def bot(op):
                         if msg_dict[msg_id]["from"]:
                            if msg_dict[msg_id]["text"] == 'Gambarnya dibawah':
                                 ginfo = cl.getGroup(at)
-                                ryan = cl.getContact(msg_dict[msg_id]["from"])
+                                Galank = cl.getContact(msg_dict[msg_id]["from"])
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
                                 xpesan =  "「 Gambar Dihapus 」\n• Pengirim : "
                                 ret_ = "• Nama Grup : {}".format(str(ginfo.name))
                                 ret_ += "\n• Waktu Ngirim : {}".format(dt_to_str(cTime_to_datetime(msg_dict[msg_id]["createdTime"])))
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
@@ -959,9 +959,9 @@ def bot(op):
                                 cl.sendImage(at, msg_dict[msg_id]["data"])
                            else:
                                 ginfo = cl.getGroup(at)
-                                ryan = cl.getContact(msg_dict[msg_id]["from"])
+                                Galank = cl.getContact(msg_dict[msg_id]["from"])
                                 ret_ =  "「 Pesan Dihapus 」\n"
-                                ret_ += "• Pengirim : {}".format(str(ryan.displayName))
+                                ret_ += "• Pengirim : {}".format(str(Galank.displayName))
                                 ret_ += "\n• Nama Grup : {}".format(str(ginfo.name))
                                 ret_ += "\n• Waktu Ngirim : {}".format(dt_to_str(cTime_to_datetime(msg_dict[msg_id]["createdTime"])))
                                 ret_ += "\n• Pesannya : {}".format(str(msg_dict[msg_id]["text"]))
@@ -978,9 +978,9 @@ def bot(op):
                     if msg_id in msg_dict1:
                         if msg_dict1[msg_id]["from"]:
                                 ginfo = cl.getGroup(at)
-                                ryan = cl.getContact(msg_dict1[msg_id]["from"])
+                                Galank = cl.getContact(msg_dict1[msg_id]["from"])
                                 ret_ =  "「 Sticker Dihapus 」\n"
-                                ret_ += "• Pengirim : {}".format(str(ryan.displayName))
+                                ret_ += "• Pengirim : {}".format(str(Galank.displayName))
                                 ret_ += "\n• Nama Grup : {}".format(str(ginfo.name))
                                 ret_ += "\n• Waktu Ngirim : {}".format(dt_to_str(cTime_to_datetime(msg_dict1[msg_id]["createdTime"])))
                                 ret_ += "{}".format(str(msg_dict1[msg_id]["text"]))
@@ -1411,8 +1411,8 @@ def bot(op):
                    mentionees = mention['MENTIONEES']
                    for mention in mentionees:
                         if mention ['M'] in admin:
-                           saints = cl.getContact(msg._from)
-                           sendMention(msg.to, saints.mid, "", wait["Respontag"])
+                           SLACKBOT = cl.getContact(msg._from)
+                           sendMention(msg.to, SLACKBOT.mid, "", wait["Respontag"])
                            cl.sendMessage(msg.to, None, contentMetadata={"PRDID":"a0768339-c2d3-4189-9653-2909e9bb6f58","PRDTYPE":"THEME","MSGTPL":"6"}, contentType=9)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
@@ -1562,18 +1562,18 @@ def bot(op):
                              try:
                                   cl.findAndAddContactsByMid(target)
                                   cl.inviteIntoGroup(msg.to,[target])
-                                  ryan = cl.getContact(target)
+                                  Galank = cl.getContact(target)
                                   zx = ""
                                   zxc = ""
                                   zx2 = []
                                   xpesan =  "「 Sukses Invite 」\nNama "
                                   ret_ = "「Ketik Invite off jika sudah done」"
-                                  ry = str(ryan.displayName)
+                                  ry = str(Galank.displayName)
                                   pesan = ''
                                   pesan2 = pesan+"@x\n"
                                   xlen = str(len(zxc)+len(xpesan))
                                   xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                  zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                  zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                   zx2.append(zx)
                                   zxc += pesan2
                                   text = xpesan + zxc + ret_ + ""
@@ -1822,18 +1822,18 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 helpMessage = help()
-                                ryan = cl.getContact(mid)
+                                Galank = cl.getContact(mid)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
                                 xpesan =  "「 Selfbot Command 」\n• User : "
                                 ret_ = str(helpMessage)
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n\n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
@@ -1843,18 +1843,18 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 helpMessage1 = helpbot()
-                                ryan = cl.getContact(mid)
+                                Galank = cl.getContact(mid)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
                                 xpesan =  "「 Setting Blacklist 」\n• User : "
                                 ret_ = str(helpMessage1)
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n\n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
@@ -1901,19 +1901,19 @@ def bot(op):
                                 if msg.to in protectcancel: md+="「✭」 Protectcancel「ON」\n"
                                 else: md+="「✭」 Protectcancel「OFF」\n"
                                 ginfo = cl.getGroup(msg.to)
-                                ryan = cl.getContact(mid)
+                                Galank = cl.getContact(mid)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
                                 xpesan =  "「 Selfbot Settings 」\n• User : "
                                 ret_ = "• Group : {}\n".format(str(ginfo.name))
                                 ret_ += str(md)
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n\n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + "\n• Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]"+"\n• Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')
@@ -1950,7 +1950,7 @@ def bot(op):
                                 start = time.time()
                                 sw.sendText("u7eadf0e2134b007f3aa538d79b5a012e", '.')
                                 elapsed_time = time.time() - start
-                                ryan = cl.getContact(mid)
+                                Galank = cl.getContact(mid)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
@@ -1964,12 +1964,12 @@ def bot(op):
                                 ret_ += "\n• In days : {} again".format(days)
                                 ret_ += "\n「 Speed Respon 」\n• {} detik".format(str(elapsed_time))
                                 ret_ += "\n「 Selfbot Runtime 」\n• {}".format(str(bot))
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
@@ -2130,7 +2130,7 @@ def bot(op):
                            if msg._from in admin:
                              sep = text.split(" ")
                              bc = text.replace(sep[0] + " ","")
-                             saya = cl.getGroupIdsJoined()
+                             Galank = cl.getGroupIdsJoined()
                              for group in saya:
                                 ryan = cl.getContact(mid)
                                 zx = ""
@@ -2138,12 +2138,12 @@ def bot(op):
                                 zx2 = []
                                 xpesan =  "「 Broadcast 」\nBroadcast by "
                                 ret_ = "{}".format(str(bc))
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x\n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
@@ -2183,18 +2183,18 @@ def bot(op):
                             if msg._from in admin:
                                 eltime = time.time() - mulai
                                 bot = runtime(eltime)
-                                ryan = cl.getContact(mid)
+                                Galank = cl.getContact(mid)
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
                                 xpesan =  "「 Runtime 」\n• User Self : "
                                 ret_ = "• {}".format(str(bot))
-                                ry = str(ryan.displayName)
+                                ry = str(Galank.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n"
                                 xlen = str(len(zxc)+len(xpesan))
                                 xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                 zx2.append(zx)
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
@@ -3934,18 +3934,18 @@ def bot(op):
                                     break
                                 try:
                                     cl.cloneContactProfile(contact)
-                                    ryan = cl.getContact(contact)
+                                    Galank = cl.getContact(contact)
                                     zx = ""
                                     zxc = ""
                                     zx2 = []
                                     xpesan =  "「 Clone Profile 」\nTarget nya "
                                     ret_ = "Berhasil clone profile target"
-                                    ry = str(ryan.displayName)
+                                    ry = str(Galank.displayName)
                                     pesan = ''
                                     pesan2 = pesan+"@x \n"
                                     xlen = str(len(zxc)+len(xpesan))
                                     xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
-                                    zx = {'S':xlen, 'E':xlen2, 'M':ryan.mid}
+                                    zx = {'S':xlen, 'E':xlen2, 'M':Galank.mid}
                                     zx2.append(zx)
                                     zxc += pesan2
                                     text = xpesan + zxc + ret_ + ""
@@ -4523,7 +4523,7 @@ def bot(op):
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                for target in targets:
-                                   if target not in Saints:
+                                   if target not in SLACKBOT:
                                        try:
                                            admin.remove(target)
                                            cl.sendMessage(msg.to,"Admin has been deleted !")
@@ -4538,7 +4538,7 @@ def bot(op):
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                for target in targets:
-                                   if target not in Saints:
+                                   if target not in SLACKBOT:
                                        try:
                                            staff.remove(target)
                                            cl.sendMessage(msg.to,"Staff has been deleted !")
@@ -4553,7 +4553,7 @@ def bot(op):
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                for target in targets:
-                                   if target not in Saints:
+                                   if target not in SLACKBOT:
                                        try:
                                            Bots.remove(target)
                                            cl.sendMessage(msg.to,"Bots has been deleted !")
