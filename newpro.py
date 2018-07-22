@@ -11,47 +11,48 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import youtube_dl
 #import pyimgflip
-cl = LineClient(authToken='EtX6RRobtBm7DLEMkyD5.eQ6R6IOHNqH//M2un/UxXq.vmF0l0PQn/Bjt94qylwNvIAJpBX9hrQuN7g181czTL0=')
+
+cl = LineClient(authToken='isi token mu')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='Et01kE5vWgqxEHeI8uP2.3I13Zr+YqgUiQL4M5SgkqG.Xf8EfnTv/OqRQHdG/sAoj+Vg+AQFBbVyAzHhzHzYalM=')
+ki = LineClient(authToken='isi token mu')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='Eta8jHaYThcjPtrIwfmf.FcT6jLkdK2I4KjMnWnweJW.NX64SVxT229k/ccCEeyc+7aZrAY5t2Et5N0AfD9jJos=')
+kk = LineClient(authToken='isi token mu')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='EtocquRp3l1ePOpnp9R2.CJF7vfp6SaSjXezpPXkkiG.725QRKK94DRRUaqbOq4O8cSDDgBzYrmYeKohxNV21GY=')
+kc = LineClient(authToken='isi token mu')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-km = LineClient(authToken='EtY9VJgsKMdyHiR2a9O0.Iud4Fmb5VADcfAcHM//8Ca.cJD6nxbbWSCiLrxqzyDeYRKSEeyiQ7Dex4XBamxxndo=')
+km = LineClient(authToken='isi token mu')
 km.log("Auth Token : " + str(km.authToken))
 channel4 = LineChannel(km)
 km.log("Channel Access Token : " + str(channel4.channelAccessToken))
 
-kb = LineClient(authToken='EtXa6EEfPQmeKLvGTWdf.ff6fAAzFeHu9lp3/hBtwZW.wlMkAQhyuD+As5ycBr5zHl9Lj5Kqnu+DRoE0wG6rufA=')
+kb = LineClient(authToken='isi token mu')
 kb.log("Auth Token : " + str(kb.authToken))
 channel5 = LineChannel(kb)
 kb.log("Channel Access Token : " + str(channel5.channelAccessToken))
 
-sw = LineClient(authToken='EtAd1PwTm6ej0tDCDKe9.NjXz4/z8uyBWBNbHmxynIq.8OprIi8FjKtWilhXfVB+L5Lo/QQ8K5fYmWAMHfMFnqM=')
+sw = LineClient(authToken='isi token mu')
 sw.log("Auth Token : " + str(sw.authToken))
 channel6 = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel6.channelAccessToken))
 
 poll = LinePoll(cl)
 call = LineCall(cl)
-creator = ["u12aeabea2a219d087efa6d9437eb97c5"]
-owner = ["u12aeabea2a219d087efa6d9437eb97c5"]
-admin = ["u12aeabea2a219d087efa6d9437eb97c5"]
-staff = ["u12aeabea2a219d087efa6d9437eb97c5"]
+creator = ["Isi mid creator"]
+owner = ["isi mid owner"]
+admin = ["isi mid admin"]
+staff = ["isi mid staff"]
 lineProfile = cl.getProfile()
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
@@ -63,7 +64,7 @@ Zmid = sw.getProfile().mid
 KAC = [cl,ki,kk,kc]
 ABC = [ki,kk,kc,km,kb]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Zmid]
-Saints = admin + staff
+Slackbot = admin + staff
 
 protectqr = []
 protectkick = []
@@ -513,160 +514,160 @@ def atend():
 def help():
     key = Setmain["keyCommand"]
     key = key.title()
-    helpMessage = "🔰 Use「 " + key + " 」to Prefix\n\n" + \
-                  "🔰" + key + "Me\n" + \
-                  "🔰" + key + "Mid「@」\n" + \
-                  "🔰" + key + "Steal「@」\n" + \
-                  "🔰" + key + "Cover「@」\n" + \
-                  "🔰" + key + "Kill「@」\n" + \
-                  "🔰" + key + "Kick「@」\n" + \
-                  "🔰" + key + "Reject\n" + \
-                  "🔰" + key + "Setting\n" + \
-                  "🔰" + key + "About\n" + \
-                  "🔰" + key + "Restart\n" + \
-                  "🔰" + key + "Runtime\n" + \
-                  "🔰" + key + "Creator\n" + \
-                  "🔰" + key + "Speed/Sp\n" + \
-                  "🔰" + key + "Respontime\n" + \
-                  "🔰" + key + "Tagall\n" + \
-                  "🔰" + key + "Alljoin\n" + \
-                  "🔰" + key + "Allbye\n" + \
-                  "🔰" + key + "Bye me\n" + \
-                  "🔰" + key + "Leave「Namagrup」\n" + \
-                  "🔰" + key + "Ginfo\n" + \
-                  "🔰" + key + "Open\n" + \
-                  "🔰" + key + "Close\n" + \
-                  "🔰" + key + "Url\n" + \
-                  "🔰" + key + "Gruplist\n" + \
-                  "🔰" + key + "Open「nomer」\n" + \
-                  "🔰" + key + "Close「nomer」\n" + \
-                  "🔰" + key + "Infogrup「nomer」\n" + \
-                  "🔰" + key + "Infomem「nomer」\n" + \
-                  "🔰" + key + "Joinall「nomer」\n" + \
-                  "🔰" + key + "Leaveall「nomer」\n" + \
-                  "🔰" + key + "Remove chat\n" + \
-                  "🔰" + key + "Lurking「on/off」\n" + \
-                  "🔰" + key + "Lurkers\n" + \
-                  "🔰" + key + "Sider「on/off」\n" + \
-                  "🔰" + key + "Updatefoto\n" + \
-                  "🔰" + key + "Updategrup\n" + \
-                  "🔰" + key + "Updatebot\n" + \
-                  "🔰" + key + "Broadcast:「Text」\n" + \
-                  "🔰" + key + "Setkey「New Key」\n" + \
-                  "🔰" + key + "Mykey\n" + \
-                  "🔰" + key + "Resetkey\n" + \
+    helpMessage = "╠➣「 " + key + " ]TΣΔM SLΔCҜβΩT\n\n" + \
+                  "╠➣" + key + "Me\n" + \
+                  "╠➣" + key + "Mid「@」\n" + \
+                  "╠➣" + key + "Steal「@」\n" + \
+                  "╠➣" + key + "Cover「@」\n" + \
+                  "╠➣" + key + "Kill「@」\n" + \
+                  "╠➣" + key + "Kick「@」\n" + \
+                  "╠➣" + key + "Reject\n" + \
+                  "╠➣" + key + "Setting\n" + \
+                  "╠➣" + key + "About\n" + \
+                  "╠➣" + key + "Restart\n" + \
+                  "╠➣" + key + "Runtime\n" + \
+                  "╠➣" + key + "Creator\n" + \
+                  "╠➣" + key + "Speed/Sp\n" + \
+                  "╠➣" + key + "Respontime\n" + \
+                  "╠➣" + key + "Tagall\n" + \
+                  "╠➣" + key + "Alljoin\n" + \
+                  "╠➣" + key + "Allbye\n" + \
+                  "╠➣" + key + "Bye me\n" + \
+                  "╠➣" + key + "Leave「Namagrup」\n" + \
+                  "╠➣" + key + "Ginfo\n" + \
+                  "╠➣" + key + "Open\n" + \
+                  "╠➣" + key + "Close\n" + \
+                  "╠➣" + key + "Url\n" + \
+                  "╠➣" + key + "Gruplist\n" + \
+                  "╠➣" + key + "Open「nomer」\n" + \
+                  "╠➣" + key + "Close「nomer」\n" + \
+                  "╠➣" + key + "Infogrup「nomer」\n" + \
+                  "╠➣" + key + "Infomem「nomer」\n" + \
+                  "╠➣" + key + "Joinall「nomer」\n" + \
+                  "╠➣" + key + "Leaveall「nomer」\n" + \
+                  "╠➣" + key + "Remove chat\n" + \
+                  "╠➣" + key + "Lurking「on/off」\n" + \
+                  "╠➣" + key + "Lurkers\n" + \
+                  "╠➣" + key + "Sider「on/off」\n" + \
+                  "╠➣" + key + "Updatefoto\n" + \
+                  "╠➣" + key + "Updategrup\n" + \
+                  "╠➣" + key + "Updatebot\n" + \
+                  "╠➣" + key + "Broadcast:「Text」\n" + \
+                  "╠➣" + key + "Setkey「New Key」\n" + \
+                  "╠➣" + key + "Mykey\n" + \
+                  "╠➣" + key + "Resetkey\n" + \
                   "\n「 Feature Command」\n• Use「 " + key + " 」to Prefix\n\n" + \
-                  "🔰" + key + "Kode wilayah\n" + \
-                  "🔰" + key + "Listmp3\n" + \
-                  "🔰" + key + "Listvideo\n" + \
-                  "🔰" + key + "Listimage\n" + \
-                  "🔰" + key + "Liststicker\n" + \
-                  "🔰" + key + "Addimg「Teks」\n" + \
-                  "🔰" + key + "Dellimg「Teks」\n" + \
-                  "🔰" + key + "Addmp3「Teks」\n" + \
-                  "🔰" + key + "Dellmp3「Teks」\n" + \
-                  "🔰" + key + "Addvideo「Teks」\n" + \
-                  "🔰" + key + "Dellvideo「Teks」\n" + \
-                  "🔰" + key + "Addsticker「Teks」\n" + \
-                  "🔰" + key + "Dellsticker「Teks」\n" + \
-                  "🔰" + key + "Spamtag:「jumlahnya」\n" + \
-                  "🔰" + key + "Spamtag「@」\n" + \
-                  "🔰" + key + "Spamcall:「jumlahnya」\n" + \
-                  "🔰" + key + "Spamcall\n" + \
-                  "🔰" + key + "Get-fs「Query」\n" + \
-                  "🔰" + key + "Get-line「ID Line」\n" + \
-                  "🔰" + key + "Get-apk「Query」\n" + \
-                  "🔰" + key + "Get-gif「Query」\n" + \
-                  "🔰" + key + "Get-image「Query」\n" + \
-                  "🔰" + key + "Get-mimpi「Query」\n" + \
-                  "🔰" + key + "Get-audio「Query」\n" + \
-                  "🔰" + key + "Get-bintang「Zodiak」\n" + \
-                  "🔰" + key + "Get-zodiak「Zodiak」\n" + \
-                  "🔰" + key + "Get-sholat「Nama Kota」\n" + \
-                  "🔰" + key + "Get-cuaca「Nama Kota」\n" + \
+                  "╠➣" + key + "Kode wilayah\n" + \
+                  "╠➣" + key + "Listmp3\n" + \
+                  "╠➣" + key + "Listvideo\n" + \
+                  "╠➣" + key + "Listimage\n" + \
+                  "╠➣" + key + "Liststicker\n" + \
+                  "╠➣" + key + "Addimg「Teks」\n" + \
+                  "╠➣" + key + "Dellimg「Teks」\n" + \
+                  "╠➣" + key + "Addmp3「Teks」\n" + \
+                  "╠➣" + key + "Dellmp3「Teks」\n" + \
+                  "╠➣" + key + "Addvideo「Teks」\n" + \
+                  "╠➣" + key + "Dellvideo「Teks」\n" + \
+                  "╠➣" + key + "Addsticker「Teks」\n" + \
+                  "╠➣" + key + "Dellsticker「Teks」\n" + \
+                  "╠➣" + key + "Spamtag:「jumlahnya」\n" + \
+                  "╠➣" + key + "Spamtag「@」\n" + \
+                  "╠➣" + key + "Spamcall:「jumlahnya」\n" + \
+                  "╠➣" + key + "Spamcall\n" + \
+                  "╠➣" + key + "Get-fs「Query」\n" + \
+                  "╠➣" + key + "Get-line「ID Line」\n" + \
+                  "╠➣" + key + "Get-apk「Query」\n" + \
+                  "╠➣" + key + "Get-gif「Query」\n" + \
+                  "╠➣" + key + "Get-image「Query」\n" + \
+                  "╠➣" + key + "Get-mimpi「Query」\n" + \
+                  "╠➣" + key + "Get-audio「Query」\n" + \
+                  "╠➣" + key + "Get-bintang「Zodiak」\n" + \
+                  "╠➣" + key + "Get-zodiak「Zodiak」\n" + \
+                  "╠➣" + key + "Get-sholat「Nama Kota」\n" + \
+                  "╠➣" + key + "Get-cuaca「Nama Kota」\n" + \
                   "\n「 Setting Command」\n• Use「 " + key + " 」to Prefix\n\n" + \
-                  "🔰" + key + "Notag「on/off」\n" + \
-                  "🔰" + key + "Protectall「on/off」\n" + \
-                  "🔰" + key + "Protecturl「on/off」\n" + \
-                  "🔰" + key + "Protectjoin「on/off」\n" + \
-                  "🔰" + key + "Protectkick「on/off」\n" + \
-                  "🔰" + key + "Protectinvite「on/off」\n" + \
-                  "🔰" + key + "Protectcancel「on/off」\n" + \
-                  "🔰" + key + "Invite「on/off」\n" + \
-                  "🔰" + key + "Sticker「on/off」\n" + \
-                  "🔰" + key + "Unsend「on/off」\n" + \
-                  "🔰" + key + "Respon「on/off」\n" + \
-                  "🔰" + key + "Timeline「on/off」\n" + \
-                  "🔰" + key + "Contact「on/off」\n" + \
-                  "🔰" + key + "Autojoin「on/off」\n" + \
-                  "🔰" + key + "Autoadd「on/off」\n" + \
-                  "🔰" + key + "Welcome「on/off」\n" + \
-                  "🔰" + key + "Autoleave「on/off」\n" + \
-                  "🔰" + key + "Jointicket「on/off」\n" + \
+                  "╠➣" + key + "Notag「on/off」\n" + \
+                  "╠➣" + key + "Protectall「on/off」\n" + \
+                  "╠➣" + key + "Protecturl「on/off」\n" + \
+                  "╠➣" + key + "Protectjoin「on/off」\n" + \
+                  "╠➣" + key + "Protectkick「on/off」\n" + \
+                  "╠➣" + key + "Protectinvite「on/off」\n" + \
+                  "╠➣" + key + "Protectcancel「on/off」\n" + \
+                  "╠➣" + key + "Invite「on/off」\n" + \
+                  "╠➣" + key + "Sticker「on/off」\n" + \
+                  "╠➣" + key + "Unsend「on/off」\n" + \
+                  "╠➣" + key + "Respon「on/off」\n" + \
+                  "╠➣" + key + "Timeline「on/off」\n" + \
+                  "╠➣" + key + "Contact「on/off」\n" + \
+                  "╠➣" + key + "Autojoin「on/off」\n" + \
+                  "╠➣" + key + "Autoadd「on/off」\n" + \
+                  "╠➣" + key + "Welcome「on/off」\n" + \
+                  "╠➣" + key + "Autoleave「on/off」\n" + \
+                  "╠➣" + key + "Jointicket「on/off」\n" + \
                   "\n「 Admin Command」\n• Use「 " + key + " 」to Prefix\n\n" + \
-                  "🔰" + key + "Bot:on\n" + \
-                  "🔰" + key + "Bot:expell\n" + \
-                  "🔰" + key + "Staff:on\n" + \
-                  "🔰" + key + "Staff:expell\n" + \
-                  "🔰" + key + "Admin:on\n" + \
-                  "🔰" + key + "Admin:expell\n" + \
-                  "🔰" + key + "Botadd「@」\n" + \
-                  "🔰" + key + "Botdell「@」\n" + \
-                  "🔰" + key + "Staffadd「@」\n" + \
-                  "🔰" + key + "Staffdell「@」\n" + \
-                  "🔰" + key + "Adminadd「@」\n" + \
-                  "🔰" + key + "Admindell「@」\n" + \
-                  "🔰" + key + "Refresh\n" + \
-                  "🔰" + key + "Listbot\n" + \
-                  "🔰" + key + "Listadmin\n" + \
-                  "🔰" + key + "Listprotect\n" + \
-                  "\n「 Refresh 」if done use the command\n"
+                  "╠➣" + key + "Bot:on\n" + \
+                  "╠➣" + key + "Bot:expell\n" + \
+                  "╠➣" + key + "Staff:on\n" + \
+                  "╠➣" + key + "Staff:expell\n" + \
+                  "╠➣" + key + "Admin:on\n" + \
+                  "╠➣" + key + "Admin:expell\n" + \
+                  "╠➣" + key + "Botadd「@」\n" + \
+                  "╠➣" + key + "Botdell「@」\n" + \
+                  "╠➣" + key + "Staffadd「@」\n" + \
+                  "╠➣" + key + "Staffdell「@」\n" + \
+                  "╠➣" + key + "Adminadd「@」\n" + \
+                  "╠➣" + key + "Admindell「@」\n" + \
+                  "╠➣" + key + "Refresh\n" + \
+                  "╠➣" + key + "Listbot\n" + \
+                  "╠➣" + key + "Listadmin\n" + \
+                  "╠➣" + key + "Listprotect\n" + \
+                  "\n「 Refresh ]done for the command\n"
     return helpMessage
 
 def helpbot():
     key = Setmain["keyCommand"]
     key = key.title()
-    helpMessage1 = "🔰 Use「 " + key + " 」to Prefix\n\n" + \
-                  "🔰" + key + "Blc\n" + \
-                  "🔰" + key + "Ban:on\n" + \
-                  "🔰" + key + "Unban:on\n" + \
-                  "🔰" + key + "Ban「@」\n" + \
-                  "🔰" + key + "Unban「@」\n" + \
-                  "🔰" + key + "Talkban「@」\n" + \
-                  "🔰" + key + "Untalkban「@」\n" + \
-                  "🔰" + key + "Talkban:on\n" + \
-                  "🔰" + key + "Untalkban:on\n" + \
-                  "🔰" + key + "Banlist\n" + \
-                  "🔰" + key + "Talkbanlist\n" + \
-                  "🔰" + key + "Clearban\n" + \
-                  "🔰" + key + "Refresh\n" + \
+    helpMessage1 = "╠➣ Use「 " + key + " 」to Prefix\n\n" + \
+                  "╠➣" + key + "Blc\n" + \
+                  "╠➣" + key + "Ban:on\n" + \
+                  "╠➣" + key + "Unban:on\n" + \
+                  "╠➣" + key + "Ban「@」\n" + \
+                  "╠➣" + key + "Unban「@」\n" + \
+                  "╠➣" + key + "Talkban「@」\n" + \
+                  "╠➣" + key + "Untalkban「@」\n" + \
+                  "╠➣" + key + "Talkban:on\n" + \
+                  "╠➣" + key + "Untalkban:on\n" + \
+                  "╠➣" + key + "Banlist\n" + \
+                  "╠➣" + key + "Talkbanlist\n" + \
+                  "╠➣" + key + "Clearban\n" + \
+                  "╠➣" + key + "Refresh\n" + \
                   "\n「 Settings Command 」\n• Use「 " + key + " 」to Prefix\n\n" + \
-                  "🔰" + key + "Cek sider\n" + \
-                  "🔰" + key + "Cek spam\n" + \
-                  "🔰" + key + "Cek pesan \n" + \
-                  "🔰" + key + "Cek respon \n" + \
-                  "🔰" + key + "Cek leave\n" + \
-                  "🔰" + key + "Cek welcome\n" + \
-                  "🔰" + key + "Set sider:「Text」\n" + \
-                  "🔰" + key + "Set spam:「Text」\n" + \
-                  "??" + key + "Set pesan:「Text」\n" + \
-                  "🔰" + key + "Set respon:「Text」\n" + \
-                  "🔰" + key + "Set leave:「Text」\n" + \
-                  "🔰" + key + "Set welcome:「Text」\n" + \
-                  "🔰" + key + "Myname:「Nama」\n" + \
-                  "🔰" + key + "Bot1name:「Nama」\n" + \
-                  "🔰" + key + "Bot2name:「Nama」\n" + \
-                  "🔰" + key + "Bot3name:「Nama」\n" + \
-                  "🔰" + key + "Bot4name:「Nama」\n" + \
-                  "🔰" + key + "Bot5name:「Nama」\n" + \
-                  "🔰" + key + "Bot1up「Kirim fotonya」\n" + \
-                  "🔰" + key + "Bot2up「Kirim fotonya」\n" + \
-                  "🔰" + key + "Bot3up「Kirim fotonya」\n" + \
-                  "🔰" + key + "Bot4up「Kirim fotonya」\n" + \
-                  "🔰" + key + "Bot5up「Kirim fotonya」\n" + \
-                  "🔰" + key + "Gift:「Mid korban」「Jumlah」\n" + \
-                  "🔰" + key + "Spam:「Mid korban」「Jumlah」\n" + \
-                  "\n「 Refresh 」If done , use the command\n"
+                  "╠➣" + key + "Cek sider\n" + \
+                  "╠➣" + key + "Cek spam\n" + \
+                  "╠➣" + key + "Cek pesan \n" + \
+                  "╠➣" + key + "Cek respon \n" + \
+                  "╠➣" + key + "Cek leave\n" + \
+                  "╠➣" + key + "Cek welcome\n" + \
+                  "╠➣" + key + "Set sider:「Text」\n" + \
+                  "╠➣" + key + "Set spam:「Text」\n" + \
+                  "╠➣" + key + "Set pesan:「Text」\n" + \
+                  "╠➣" + key + "Set respon:「Text」\n" + \
+                  "╠➣" + key + "Set leave:「Text」\n" + \
+                  "╠➣" + key + "Set welcome:「Text」\n" + \
+                  "╠➣" + key + "Myname:「Nama」\n" + \
+                  "╠➣" + key + "Bot1name:「Nama」\n" + \
+                  "╠➣" + key + "Bot2name:「Nama」\n" + \
+                  "╠➣" + key + "Bot3name:「Nama」\n" + \
+                  "╠➣" + key + "Bot4name:「Nama」\n" + \
+                  "╠➣" + key + "Bot5name:「Nama」\n" + \
+                  "╠➣" + key + "Bot1up「Kirim fotonya」\n" + \
+                  "╠➣" + key + "Bot2up「Kirim fotonya」\n" + \
+                  "╠➣" + key + "Bot3up「Kirim fotonya」\n" + \
+                  "╠➣" + key + "Bot4up「Kirim fotonya」\n" + \
+                  "╠➣" + key + "Bot5up「Kirim fotonya」\n" + \
+                  "╠➣" + key + "Gift:「Mid korban」「Jumlah」\n" + \
+                  "╠➣" + key + "Spam:「Mid korban」「Jumlah」\n" + \
+                  "\n「 Refresh 」done , for the command\n"
     return helpMessage1
 
 def bot(op):
@@ -752,7 +753,7 @@ def bot(op):
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         cl.acceptGroupInvitation(op.param1)
                         ginfo = cl.getGroup(op.param1)
-                        cl.sendMessage(op.param1,"Sorry anda bukan admin selfbot\nSelamat tinggal " +str(ginfo.name))
+                        cl.sendMessage(op.param1,"Sorry anda bukan admin kami\nSelamat tinggal " +str(ginfo.name))
                         cl.leaveGroup(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
@@ -925,9 +926,9 @@ def bot(op):
         if op.type == 5:
               if wait["autoAdd"] == True:
                   cl.findAndAddContactsByMid(op.param1)
-                  sendMention(op.param1, op.param1, "Haii ", ", terimakasih sudah add saya")
+                  sendMention(op.param1, op.param1, "Haii ", ", Thanks for add me")
                   cl.sendText(op.param1, wait["message"])
-                  cl.sendContact(op.param1, "u923fca3dc907e047572ad25c24f1d29b")
+                  cl.sendContact(op.param1, "u7eadf0e2134b007f3aa538d79b5a012e")
 
         if op.type == 65:
             if wait["unsend"] == True:
@@ -1360,11 +1361,11 @@ def bot(op):
                 else:
                     pass
 
-            if op.param1 in Setmain["RAreadPoint"]:
-                if op.param2 in Setmain["RAreadMember"][op.param1]:
+            if op.param1 in Setmain["readPoint"]:
+                if op.param2 in Setmain["readMember"][op.param1]:
                     pass
                 else:
-                    Setmain["RAreadMember"][op.param1][op.param2] = True
+                    Setmain["readMember"][op.param1][op.param2] = True
             else:
                 pass
 
@@ -1600,7 +1601,7 @@ def bot(op):
                         cl.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
                     else:
                         wait["dellbots"] = True
-                        cl.sendMessage(msg.to,"Contact itu bukan anggota bot saints")
+                        cl.sendMessage(msg.to,"Contact itu bukan anggota bot")
 #ADD STAFF
                  if msg._from in admin:
                   if wait["addstaff"] == True:
@@ -1719,48 +1720,48 @@ def bot(op):
                      cl.sendMessage(msg.to, "Berhasil mengubah foto group")
                if msg.contentType == 1:
                    if msg._from in admin:
-                       if mid in Setmain["RAfoto"]:
+                       if mid in Setmain["Bfoto"]:
                             path = cl.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][mid]
+                            del Setmain["Bfoto"][mid]
                             cl.updateProfilePicture(path)
                             cl.sendMessage(msg.to,"Foto berhasil dirubah")
                if msg.contentType == 2:
                    if msg._from in admin:
-                       if mid in Setmain["RAvideo"]:
+                       if mid in Setmain["Bvideo"]:
                             path = cl.downloadObjectMsg(msg_id)
-                            del Setmain["RAvideo"][mid]
+                            del Setmain["Bvideo"][mid]
                             cl.updateProfileVideoPicture(path)
                             cl.sendMessage(msg.to,"Foto berhasil dirubah jadi video")
                if msg.contentType == 1:
                  if msg._from in admin:
-                        if Amid in Setmain["RAfoto"]:
+                        if Amid in Setmain["Bfoto"]:
                             path = ki.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][Amid]
+                            del Setmain["Bfoto"][Amid]
                             ki.updateProfilePicture(path)
                             ki.sendMessage(msg.to,"Foto berhasil dirubah")
-                        elif Bmid in Setmain["RAfoto"]:
+                        elif Bmid in Setmain["Bfoto"]:
                             path = kk.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][Bmid]
+                            del Setmain["Bfoto"][Bmid]
                             kk.updateProfilePicture(path)
                             kk.sendMessage(msg.to,"Foto berhasil dirubah")
-                        elif Cmid in Setmain["RAfoto"]:
+                        elif Cmid in Setmain["Bfoto"]:
                             path = kc.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][Cmid]
+                            del Setmain["Bfoto"][Cmid]
                             kc.updateProfilePicture(path)
                             kc.sendMessage(msg.to,"Foto berhasil dirubah")
-                        elif Dmid in Setmain["RAfoto"]:
+                        elif Dmid in Setmain["Bfoto"]:
                             path = km.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][Dmid]
+                            del Setmain["Bfoto"][Dmid]
                             km.updateProfilePicture(path)
                             km.sendMessage(msg.to,"Foto berhasil dirubah")
-                        elif Emid in Setmain["RAfoto"]:
+                        elif Emid in Setmain["Bfoto"]:
                             path = kb.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][Emid]
+                            del Setmain["Bfoto"][Emid]
                             kb.updateProfilePicture(path)
                             kb.sendMessage(msg.to,"Foto berhasil dirubah")
-                        elif Zmid in Setmain["RAfoto"]:
+                        elif Zmid in Setmain["Bfoto"]:
                             path = sw.downloadObjectMsg(msg_id)
-                            del Setmain["RAfoto"][Zmid]
+                            del Setmain["Bfoto"][Zmid]
                             sw.updateProfilePicture(path)
                             sw.sendMessage(msg.to,"Foto berhasil dirubah")
                if msg.contentType == 1:
@@ -1920,7 +1921,7 @@ def bot(op):
                                 
                         elif cmd == "creator" or text.lower() == 'creator':
                             if msg._from in admin:
-                                cl.sendText(msg.to,"「Created by : Alvian Putra」") 
+                                cl.sendText(msg.to,"「Created by : TΣΔM SLΔCҜβΩT」") 
                                 ma = ""
                                 for i in creator:
                                     ma = cl.getContact(i)
@@ -1947,7 +1948,7 @@ def bot(op):
                                 eltime = time.time() - mulai
                                 bot = runtime(eltime)
                                 start = time.time()
-                                sw.sendText("u923fca3dc907e047572ad25c24f1d29b", '.')
+                                sw.sendText("u7eadf0e2134b007f3aa538d79b5a012e", '.')
                                 elapsed_time = time.time() - start
                                 ryan = cl.getContact(mid)
                                 zx = ""
@@ -1973,7 +1974,7 @@ def bot(op):
                                 zxc += pesan2
                                 text = xpesan + zxc + ret_ + ""
                                 cl.sendMessage(to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
-                                cl.sendContact(to, "u923fca3dc907e047572ad25c24f1d29b")
+                                cl.sendContact(to, "u7eadf0e2134b007f3aa538d79b5a012e")
                             except Exception as e:
                                 cl.sendMessage(msg.to, str(e))
 
